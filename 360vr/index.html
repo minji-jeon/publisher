@@ -1,0 +1,49 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A simple example</title>
+    <link rel="stylesheet" href="./pannellum.css"/>
+    <script type="text/javascript" src="./pannellum.js"></script>
+    <style>
+    #panorama {
+        width: 800px;
+        height: 800px;
+    }
+    </style>
+</head>
+<body>
+
+<div id="panorama"></div>
+<script>
+pannellum.viewer('panorama', {
+    "type": "equirectangular",
+    "panorama": "https://pannellum.org/images/alma.jpg",
+    "autoLoad": true, //클릭 없이 이미지 로드
+    "autoRotate": 1, //스스로 움직임. 속도 방향 
+    // "autoRotateInactivityDelay":5000, //사용 후 다시 움직이기전까지의 시간
+    "autoRotateStopDelay":5000, //로드 후 자동재생이 멈출때까지의 시간 "autoRotateInactivityDelay"가 있으면 효과없음
+    // "preview": "https://pannellum.org/images/tocopilla.jpg", //클릭시 로드일때 미리 보여주는 이미지
+    // "title": "ALMA Correlator Facility", //제목 표시
+    // "author": "Matthew Petroff" // 작성자 표시
+    // "cubeMap": [
+    //     "/images/wyman-park-playground-cubic/face0.jpg",
+    //     "/images/wyman-park-playground-cubic/face1.jpg",
+    //     "/images/wyman-park-playground-cubic/face2.jpg",
+    //     "/images/wyman-park-playground-cubic/face3.jpg",
+    //     "/images/wyman-park-playground-cubic/face4.jpg",
+    //     "/images/wyman-park-playground-cubic/face5.jpg"
+    // ] , // 이미지가 쪼개져있을때
+    "pitch": 9.0, //상하 각도
+    "yaw": -369, //좌우 각도
+    "hfov": 120, //확대정도 0 ~ 120
+    "fallback":"https://pannellum.org/images/alma.jpg", //??
+    "orientationOnByDefault":false, //??
+    "showZoomCtrl":false, //zoom 컨트롤이 없어짐
+    "keyboardZoom":true, // 키보드로 컨트롤 가능
+    "multiResMinHfov":true
+});
+</script>
+
+</body>
+</html>
