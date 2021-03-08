@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>tab 연습</title>
+  <link rel="stylesheet" href="../../css/base.css">
+  <script src="../../js/jquery-1.12.2.min.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
+</head>
+<body class="gnb-test">
+  <div class="wrap">
+    <header class="header">
+      <div class="header-wrap">
+        <div class="header-inner">
+          <!-- 로고 -->
+          <div class="logo-wrap">
+            <h1><a href="./index.html" target="_self" class="navigation-header-logo">내가 로고야</a></h1>
+          </div>
+          <!-- 데탑 메뉴 -->
+          <div class="header-content header-desktop only-desktop">
+            <!-- 네비 -->
+            <nav class="navigation-header-gnb" role="navigation" aria-label="Main navigation" tabindex="0">
+              <h2 class="blind">네비게이션</h2>
+              <!-- 대학소개 -->
+              <div class="navigation-gnb-d1-list">
+                <a href="#" target="_self" class="navigation-gnb-d1-link js" id="menu1" role="menuitem" aria-selected="false" aria-controls="menu1-depth2"><span class="navigation-gnb-d1-title">서울대학소개</span></a>
+                <!-- 하위메뉴 -->
+                <div class="navigation-gnb-d2-list js" id="menu1-depth2" role="menu" aria-labelledby="menu1" tabindex="-1">
+                  <a href="" target="_self" class="navigation-gnb-d2">대학현황</a>
+                  <a href="#" target="_self" class="navigation-gnb-d2">대학상징</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">총장실</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">역사</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">SNU Awards</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">관악캠퍼스</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">멀티캠퍼스</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">자료실</a>
+                </div>
+              </div>
+              <!-- 교육 -->
+              <div class="navigation-gnb-d1-list">
+                <a href="#" target="_self" class="navigation-gnb-d1-link js" id="menu2" role="menuitem" aria-selected="false" aria-controls="menu2-depth2"><span class="navigation-gnb-d1-title">교육</span></a>
+                <!-- 하위메뉴 -->
+                <div class="navigation-gnb-d2-list js" id="menu2-depth2" role="menu" aria-labelledby="menu2" tabindex="-1">
+                  <a href="" target="_self" class="navigation-gnb-d2">대학</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">대학원</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">공개강좌</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">학사행정</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">교육지원</a>
+                  <a href="" target="_blank" title="새창으로 열림" rel="noopener noreferrer" class="navigation-gnb-d2">행정서비스헌장</a>
+                </div>
+              </div>
+              <!-- 연구 -->
+              <div class="navigation-gnb-d1-list">
+                <a href="#" target="_self" class="navigation-gnb-d1-link js" id="menu3" role="menuitem" aria-selected="false" aria-controls="menu3-depth2"><span class="navigation-gnb-d1-title">연구</span></a>
+                <!-- 하위메뉴 -->
+                <div class="navigation-gnb-d2-list js" id="menu3-depth2" role="menu" aria-labelledby="menu3" tabindex="-1">
+                  <a href="" target="_self" class="navigation-gnb-d2">연구성과</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">연구현황</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">연구지원</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">연구윤리</a>
+                </div>
+              </div>
+              <!-- 입학 -->
+              <div class="navigation-gnb-d1-list">
+                <a href="#" target="_self" class="navigation-gnb-d1-link js" id="menu4" role="menuitem" aria-selected="false" aria-controls="menu4-depth2"><span class="navigation-gnb-d1-title">입학</span></a>
+                <!-- 하위메뉴 -->
+                <div class="navigation-gnb-d2-list js" id="menu4-depth2" role="menu" aria-labelledby="menu4" tabindex="-1">
+                  <a href="" target="_self" class="navigation-gnb-d2">입학 메인</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">대학</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">대학원</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">글로벌</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">입학도우미</a>
+                </div>
+              </div>
+              <!-- 대학생활 -->
+              <div class="navigation-gnb-d1-list">
+                <a href="#" target="_self" class="navigation-gnb-d1-link js" id="menu5" role="menuitem" aria-selected="false" aria-controls="menu5-depth2"><span class="navigation-gnb-d1-title">대학생활</span></a>
+                <!-- 하위메뉴 -->
+                <div class="navigation-gnb-d2-list js" id="menu5-depth2" role="menu" aria-labelledby="menu5" tabindex="-1">
+                  <a href="" target="_self" class="navigation-gnb-d2">학생활동</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">시설이용</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">학생서비스</a>
+                </div>
+              </div>
+              <!-- SNU NOW -->
+              <div class="navigation-gnb-d1-list">
+                <a href="#" target="_self" class="navigation-gnb-d1-link js" id="menu6" role="menuitem" aria-selected="false" aria-controls="menu6-depth2"><span class="navigation-gnb-d1-title">SNU NOW</span></a>
+                <!-- 하위메뉴 -->
+                <div class="navigation-gnb-d2-list js" id="menu6-depth2" role="menu" aria-labelledby="menu6" tabindex="-1">
+                  <a href="" target="_self" class="navigation-gnb-d2">SNU 소식</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">보도자료</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">언론속 서울대</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">SNU 미디어</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">소통자료실</a>
+                  <a href="" target="_self" class="navigation-gnb-d2 last">행사캘린더</a>
+                </div>
+              </div>
+            </nav>
+          </div>
+          <!-- 모바일 메뉴 -->
+          <div class="header-content header-mobile only-mobile">
+            <a href="#" class="navigation-menu-open-btn js"><span>메뉴 열기</span></a>
+            <!-- 네비 -->
+            <nav class="navigation-header-gnb js" role="navigation" aria-label="Main navigation" tabindex="0">
+              <h2 class="blind">네비게이션</h2>
+              <!-- 대학소개 -->
+              <div class="navigation-gnb-d1-list">
+                <button type="button" class="navigation-gnb-d1-link js" id="menu1" role="menuitem" aria-selected="false" aria-controls="menu1-depth2"><span class="navigation-gnb-d1-title">서울대학소개</span></button>
+                <!-- 하위메뉴 -->
+                <div class="navigation-gnb-d2-list"  id="menu1-depth2" role="menu" aria-labelledby="menu1" tabindex="-1">
+                  <a href="" target="_self" class="navigation-gnb-d2">대학현황</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">대학상징</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">총장실</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">역사</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">SNU Awards</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">관악캠퍼스</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">멀티캠퍼스</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">자료실</a>
+                </div>
+              </div>
+              <!-- 교육 -->
+              <div class="navigation-gnb-d1-list">
+                <button type="button" class="navigation-gnb-d1-link js" id="menu2" role="menuitem" aria-selected="false" aria-controls="menu2-depth2"><span class="navigation-gnb-d1-title">교육</span></button>
+                <!-- 하위메뉴 -->
+                <div class="navigation-gnb-d2-list" id="menu2-depth2" role="menu" aria-labelledby="menu2" tabindex="-1">
+                  <a href="" target="_self" class="navigation-gnb-d2">대학</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">대학원</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">공개강좌</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">학사행정</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">교육지원</a>
+                  <a href="" target="_blank" title="새창으로 열림" rel="noopener noreferrer" class="navigation-gnb-d2">행정서비스헌장</a>
+                </div>
+              </div>
+              <!-- 연구 -->
+              <div class="navigation-gnb-d1-list">
+                <button type="button" class="navigation-gnb-d1-link js" id="menu3" role="menuitem" aria-selected="false" aria-controls="menu3-depth2"><span class="navigation-gnb-d1-title">연구</span></button>
+                <!-- 하위메뉴 -->
+                <div class="navigation-gnb-d2-list" id="menu3-depth2" role="menu" aria-labelledby="menu3" tabindex="-1">
+                  <a href="" target="_self" class="navigation-gnb-d2">연구성과</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">연구현황</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">연구지원</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">연구윤리</a>
+                </div>
+              </div>
+              <!-- 입학 -->
+              <div class="navigation-gnb-d1-list">
+                <button type="button" class="navigation-gnb-d1-link js" id="menu4" role="menuitem" aria-selected="false" aria-controls="menu4-depth2"><span class="navigation-gnb-d1-title">입학</span></button>
+                <!-- 하위메뉴 -->
+                <div class="navigation-gnb-d2-list" id="menu4-depth2" role="menu" aria-labelledby="menu4" tabindex="-1">
+                  <a href="" target="_self" class="navigation-gnb-d2">입학 메인</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">대학</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">대학원</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">글로벌</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">입학도우미</a>
+                </div>
+              </div>
+              <!-- 대학생활 -->
+              <div class="navigation-gnb-d1-list">
+                <button type="button" class="navigation-gnb-d1-link js" id="menu5" role="menuitem" aria-selected="false" aria-controls="menu5-depth2"><span class="navigation-gnb-d1-title">대학생활</span></button>
+                <!-- 하위메뉴 -->
+                <div class="navigation-gnb-d2-list" id="menu5-depth2" role="menu" aria-labelledby="menu5" tabindex="-1">
+                  <a href="" target="_self" class="navigation-gnb-d2">학생활동</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">시설이용</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">학생서비스</a>
+                </div>
+              </div>
+              <!-- SNU NOW -->
+              <div class="navigation-gnb-d1-list">
+                <button type="button" class="navigation-gnb-d1-link js" id="menu6" role="menuitem" aria-selected="false" aria-controls="menu6-depth2"><span class="navigation-gnb-d1-title">SNU NOW</span></button>
+                <!-- 하위메뉴 -->
+                <div class="navigation-gnb-d2-list" id="menu6-depth2" role="menu" aria-labelledby="menu6" tabindex="-1">
+                  <a href="" target="_self" class="navigation-gnb-d2">SNU 소식</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">보도자료</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">언론속 서울대</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">SNU 미디어</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">소통자료실</a>
+                  <a href="" target="_self" class="navigation-gnb-d2">행사캘린더</a>
+                </div>
+              </div>
+              <a href="#" class="navigation-menu-close-btn js"><span>메뉴 닫기</span></a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="box-list">
+        <div class="box"></div>
+      </section>
+      <!-- 텝메뉴 -->
+      <section class="tab-sc">
+        <div class="tab-wrap">
+          <div class="tabs">
+            <p class="blind">텝메뉴 영역입니다. 1번 텝 활성화, 마우스로 텝 좌우 이동 가능</p>
+            <div role="tablist" aria-label="Sample Tabs" class="tablist">
+              <button role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" class="tab is-active">
+                1번
+              </button>
+              <div id="panel-1" role="tabpanel" aria-labelledby="tab-1" class="tab-panel red is-active" tabindex="0">
+                <div class="tab-content">
+                  <a href="#">나는</a>
+                  <a href="#">빨간색</a>
+                  <a href="#">이지롱</a>
+                </div>
+              </div>
+              <button role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" class="tab">
+                2번
+              </button>
+              <div id="panel-2" role="tabpanel" aria-labelledby="tab-2" class="tab-panel blue" tabindex="-1">
+                <div class="tab-content">
+                  <a href="#">나는</a>
+                  <a href="#">파란색</a>
+                  <a href="#">인데..</a>
+                </div>
+              </div>
+              <button role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" class="tab">
+                3번
+              </button>
+              <div id="panel-3" role="tabpanel" aria-labelledby="tab-3" class="tab-panel gren" tabindex="-1">
+                <div class="tab-content">
+                  <a href="#">내가</a>
+                  <a href="#">초록색</a>
+                  <a href="#">인가?</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script>
+
+  desktopNav()
+
+  // gnb
+  function desktopNav() {
+    var $gnbOpenContent = $('.header-wrap');
+    var $1dList = $('.header-desktop .navigation-gnb-d1-list');
+    var $1dLink = $('.header-desktop .navigation-gnb-d1-link');
+    var $2dList = $('.header-desktop .navigation-gnb-d2-list');
+    var $2dLinkLast = $('.header-desktop .navigation-gnb-d2.last');
+
+    // 메뉴 오픈
+    $1dLink.on('mouseenter focus', function() {
+      $1dLink.removeClass('is-active').attr('aria-selected','false');
+      $(this).addClass('is-active').attr('aria-selected','true');
+      $2dList.removeClass('is-active').attr('tabindex',-1);
+      $(this).next('.navigation-gnb-d2-list').addClass('is-active').attr('tabindex',0);
+    });
+      
+    // gnb에서 mouseleave 시 
+    $gnbOpenContent.on('mouseleave', function() {
+      $1dLink.removeClass('is-active');
+      $2dList.removeClass('is-active');
+    });
+
+    // 마지막 메뉴 포커스 아웃
+    $2dLinkLast.on('focusout', function() {
+      $1dLink.removeClass('is-active');
+      $2dList.removeClass('is-active');
+    })
+
+    var tabFocus = 0;
+
+    // 좌우로 이동
+    $gnbOpenContent.on('keydown', function(e){
+      if (e.keyCode === 39 || e.keyCode === 37) {
+        // 오른쪽
+        if (e.keyCode === 39) {
+          tabFocus++; 
+          if (tabFocus >= $1dList.length) tabFocus = 0;
+          // 왼쪽
+        } else if (e.keyCode === 37) {
+          tabFocus--;
+          if (tabFocus < 0) tabFocus = $1dList.length - 1;
+        }
+
+        $1dLink[tabFocus].focus();
+      }
+    });
+
+  }
+
+  mobileNav()
+
+  function mobileNav() {
+    var $m_gnbOpenBtn = $('.header-mobile .navigation-menu-open-btn');
+    var $m_gnbCloseBtn = $('.header-mobile .navigation-menu-close-btn');
+    var $m_gnbOpenContent = $('.header-mobile .navigation-header-gnb');
+    var $m_1dLink = $('.header-mobile .navigation-gnb-d1-link');
+    var $m_2dList = $('.header-mobile .navigation-gnb-d2-list');
+
+    // 모바일 gnb 열기
+    $m_gnbOpenBtn.on('click', function() {
+      $m_gnbOpenContent.addClass('show-nav');
+      setTimeout (function() {
+      $m_gnbOpenContent.addClass('is-show');
+      },100);
+      $('body').addClass('hidden');
+    });
+
+    // 모바일 gnb 닫기
+    $m_gnbCloseBtn.on('click', function() {
+      $m_gnbOpenContent.addClass('show-nav');
+      setTimeout (function() {
+      $m_gnbOpenContent.removeClass('is-show');
+      },100);
+      $('body').removeClass('hidden');
+    });
+
+    // 메뉴 열기
+    $m_1dLink.on('click', function() {
+      $m_2dList.attr('aria-selected','false').attr('tabindex',-1);
+      $(this).next('.navigation-gnb-d2-list').toggleClass('is-active').attr('aria-selected','true').attr('tabindex',0);
+    });
+  }
+
+  
+
+  textTab('.tablist');
+
+  // 텝메뉴
+  function textTab(selector) {
+    var $selector = $(selector);
+    var $tabs = $selector.find('.tab');
+
+    // 텝메뉴 클릭 시
+    $tabs.on('click', function() {
+      var $this = $(this);
+      var thisAria = $this.attr('aria-controls');
+
+      // 텝버튼
+      $tabs.attr("aria-selected", false).removeClass('is-active');
+      $this.attr("aria-selected", true).addClass('is-active');
+
+      // 텝내용 열림
+      $selector.find('.tab-panel').removeClass('is-active').attr('tabindex', -1);
+      $selector.find('#'+ thisAria +'').addClass('is-active').attr('tabindex', 0);
+    });
+
+
+    var tabFocus = 0;
+
+    // 좌우로 이동
+    $selector.on('keydown', function(e){
+      if (e.keyCode === 39 || e.keyCode === 37) {
+        // 오른쪽
+        if (e.keyCode === 39) {
+          tabFocus++;
+          if (tabFocus >= $tabs.length) tabFocus = 0;
+          // 왼쪽
+        } else if (e.keyCode === 37) {
+          tabFocus--;
+          if (tabFocus < 0) tabFocus = $tabs.length - 1;
+        }
+
+        $tabs[tabFocus].focus();
+      }
+    });
+
+  }
+
+
+  </script>
+</body>
+</html>
