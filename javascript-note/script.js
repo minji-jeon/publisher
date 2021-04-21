@@ -58,11 +58,11 @@ console.log(`미디어브레인은
 
 
 //문자열을 변경하고싶을때
-const input = '오늘 보실 드라마는 최신 시작한 드라마입니다.';
+const input = '오늘 보실 드라마는 최근 시작한 드라마입니다.';
 const output = input.replace('드라마', '영화'); //처음에 만나는 드라마만 변경
-console.log(output)
-console.log(input.replace(/드라마/g, '영화')) //모든 드라마를 변경
-console.log(input.replaceAll('드라마', '영화')) //모든 드라마를 변경(구형브라우저에서 안됨)
+console.log(output);
+console.log(input.replace(/드라마/g, '영화')); //모든 드라마를 변경
+console.log(input.replaceAll('드라마', '영화')); //모든 드라마를 변경(구형브라우저(IE에서도)에서 안됨)
 
 /* 
 includes - 문자열에 해당 글자가 있는지

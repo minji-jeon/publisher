@@ -1,9 +1,9 @@
 //객체와 배열의 주요기능
 //단축속성명 (shorthand property names)
-const name = 'min';
+const namez = 'min';
 const objmin = {
   age : 29,
-  name,
+  namez,
   getName() {
     return this.name;
   },
@@ -13,7 +13,7 @@ console.log(objmin);
 const name2 = 'minn';
 const age = 29;
 
-console.log({name,age}); //{name: "min", age: 29} 단축속성명을 사용하여 변수의 이름과 값을 한번에 확인이 가능하다.
+console.log({namez,age}); //{name: "min", age: 29} 단축속성명을 사용하여 변수의 이름과 값을 한번에 확인이 가능하다.
 
 
 //계산된 속성명 (computed property names)
