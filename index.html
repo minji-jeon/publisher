@@ -4,8 +4,158 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script src="./babel/num-ball/lib/js/jquery-1.12.2.min.js"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+  <style>
+    .highcharts-figure, .highcharts-data-table table {
+        min-width: 320px; 
+        max-width: 660px;
+        margin: 1em auto;
+    }
+
+    .highcharts-data-table table {
+      font-family: Verdana, sans-serif;
+      border-collapse: collapse;
+      border: 1px solid #EBEBEB;
+      margin: 10px auto;
+      text-align: center;
+      width: 100%;
+      max-width: 500px;
+    }
+    .highcharts-data-table caption {
+        padding: 1em 0;
+        font-size: 1.2em;
+        color: #555;
+    }
+    .highcharts-data-table th {
+      font-weight: 600;
+        padding: 0.5em;
+    }
+    .highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+        padding: 0.5em;
+    }
+    .highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+        background: #f8f8f8;
+    }
+    .highcharts-data-table tr:hover {
+        background: #f1f7ff;
+    }
+    .highcharts-credits,.highcharts-a11y-proxy-button,.highcharts-exporting-group {
+      display: none !important;
+    }
+  </style>
 </head>
 <body>
-  
+  <figure class="highcharts-figure">
+    <div id="container"></div>
+<br>
+<div class="container1">
+  <section class="click-show-banner">
+    <input type="text" id="day1" value="51">
+    <input type="text" id="day2" value="21">
+    <input type="text" id="day3" value="4">
+    <input type="text" id="day4" value="4">
+    <input type="text" id="day5" value="4">
+    <input type="text" id="day6" value="16">
+    <button type="button" class="change-day">확인</button>
+  </section>
+</div>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+</figure>
+<script>
+  var num1 = Number($('#day1').val());
+  // var num1 = 51
+  var num2 = Number($('#day2').val());
+  var num3 = Number($('#day3').val());
+  var num4 = Number($('#day4').val());
+  var num5 = Number($('#day5').val());
+  var num6 = Number($('#day6').val());
+
+ 
+  showchart()
+  // Build the chart
+  function showchart() {
+
+    Highcharts.chart('container', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+    },
+    title: {
+        text: ''
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    accessibility: {
+        point: {
+            valueSuffix: '%'
+        }
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: false
+            },
+            showInLegend: true
+        }
+    },
+    series: [{
+        name: 'Brands',
+        colorByPoint: true,
+        data: 
+        [{
+            name: 'Chrome',
+            y: num1,
+            sliced: true,
+            selected: true
+        }, {
+            name: 'Internet Explorer',
+            y: num2
+        }, {
+            name: 'Firefox',
+            y: num3
+        }, {
+            name: 'Edge',
+            y: num4
+        }, {
+            name: 'Safari',
+            y:num5
+        }, {
+            name: 'Other',
+            y: num6
+        }]
+    }]
+});
+  }
+
+
+  $('.change-day').on('click', function() {
+    num1 = Number($('#day1').val());
+  num2 = Number($('#day2').val());
+  num3 = Number($('#day3').val());
+  num4 = Number($('#day4').val());
+  num5 = Number($('#day5').val());
+  num6 = Number($('#day6').val());
+    console.log(num1);
+    console.log(num2);
+    console.log(num3);
+    console.log(num4);
+    console.log(num5);
+    console.log(num6);
+    showchart();
+  })
+</script>
 </body>
 </html>
