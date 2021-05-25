@@ -1,0 +1,21 @@
+{
+  "name": "tailwind-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "postcss lib/css/style.css -o src/css/style.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^10.2.5",
+    "postcss": "^8.3.0",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.1.2"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^4.0.3"
+  }
+}
