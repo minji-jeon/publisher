@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>caffee pascucci</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/sub02.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css" />
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/ui_library_common.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <a href="#main" id="skip-nav">본문 바로가기</a>
+    <header>
+      <article class="top_header">
+        <div class="inner">
+          <h1 class="logo">
+            <a href="index.html">
+              <img src="img/main/header_logo.jpg" alt="파스쿠찌 로고"/>
+            </a>
+          </h1>
+          <ul class="sns_list clear">
+            <li>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-blog"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </li>
+          </ul>
+          <form class="H_Search">
+            <label for="Search">통합검색</label>
+            <div>
+              <input type="search" id="Search" />
+              <a href="#"><i class="fas fa-search"></i></a>
+            </div>
+          </form>
+        </div>
+      </article>
+      <article class="gnb">
+        <div class="inner">
+          <button><i class="fas fa-bars"></i></button>
+          <nav>
+            <a href="sub01.html">CAFFE PASCUCCI</a>
+            <a href="sub02.html">MENU</a>
+            <a href="sub03.html">EVENT&amp;TALK</a>
+            <a href="sub04.html">STORE</a>
+            <a href="sub05.html">CUSTOMER</a>
+            <a class="red" href="sub06.html">FRANCHISH</a>
+          </nav>
+        </div>
+      </article>
+    </header>
+    <!-- header end -->
+    <section id="visual">
+      <div class="inner">
+        <div class="visual_text">
+          <p class="R_49">Pascucci menu</p>
+          <p class="N_20">130년 정통 이탈리아 에스프레소 커피전문점</p>
+        </div>
+      </div>
+    </section>
+    <!-- visual end -->
+
+    <main id="main">
+      <!-- scene02 start -->
+      <ul class="sub_menu clear">
+        <li><a class="on" href="#">HOT</a></li>
+        <li><a href="#">ICED</a></li>
+        <li><a href="#">BEAN</a></li>
+      </ul>
+    </main>
+    <!-- scene02 end -->
+
+    <section id="scene03">
+      <!-- scene03 start -->
+      <div class="inner_s clear">
+        <h2 class="N_17">따뜻한 커피</h2>
+        <p>풍미 깊은 맛을 따뜻하게 만나는 커피</p>
+      </div>
+    </section>
+    <!-- scene03 end -->
+
+    <section id="scene04">
+      <!-- scene04 start -->
+      <ul class="inner_s">
+        <!-- <li>
+          <a href="#">
+            <img src="./img/manu/menu_img01.jpg" alt="" />
+            <p class="title">오리지널 드립커피</p>
+            <p class="sub_text">
+              파스쿠찌 Single Origin Coffee를 추출한<br />이탈리아 정통 드립식 커피
+            </p>
+            <p><span>&#35; 신선한 원두</span></p>
+          </a>
+        </li>
+        <li>
+          <a href="#" >
+            <img src="img/manu/menu_img02.jpg" alt="" />
+            <p class="title">아메리카노</p>
+            <p class="sub_text">
+              뜨거운 물에 에스프레소를 희석,<br />부드럽고 깊은 아로마를 느낄 수
+              있는 커피
+            </p>
+            <p><span>&#35; 신선한 원두</span></p></a=>
+        </li>
+        <li>
+          <a href="#">
+            <img src="img/manu/menu_img03.jpg" alt="" />
+            <p class="title">카페라떼</p>
+            <p class="sub_text">
+              에스프레소와 스팀우유를 혼합하여<br />고소함과 부드러움을 느낄 수
+              있는 커피
+            </p>
+            <p><span>&#35; 원두 &#35; 우유</span></p></a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="img/manu/menu_img04.jpg" alt="" />
+            <p class="title">카라멜 라떼 마끼아또</p>
+            <p class="sub_text">
+              카라멜과 부드러운 밀크를 혼합 한 후,<br />에스프레소를 가미한 정통
+              이탈리아 라떼
+            </p>
+            <p><span>&#35; 카라멜 &#35; 우유</span></p></a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="img/manu/menu_img05.jpg" alt="" />
+            <p class="title">바닐라 라떼 마끼아또</p>
+            <p class="sub_text">
+              바닐라와 부드러운 스팀 밀크를 혼합 한 후,<br />에스프레소를 가미한
+              이탈리아 라떼
+            </p>
+            <p><span>&#35; 바닐라 &#35; 우유</span></p></a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="img/manu/menu_img06.jpg" alt="" />
+            <p class="title">화이트초콜릿 라떼마끼아또</p>
+            <p class="sub_text">
+              화이트초콜릿과 스팀 밀크를 혼합 후,<br />에스프레소를 가미한
+              이탈리아 라떼
+            </p>
+            <p><span>&#35; 초콜릿 &#35; 우유</span></p></a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="img/manu/menu_img07.jpg" alt="" />
+            <p class="title">카페모카</p>
+            <p class="sub_text">
+              초콜릿과 에스프레소에 밀크를 혼합 후,<br />생크림을 얹은
+              베리에이션 커피
+            </p>
+            <p><span>&#35; 초콜릿 &#35; 우유</span></p></a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="img/manu/menu_img08.jpg" alt="" />
+            <p class="title">카푸치노</p>
+            <p class="sub_text">
+              에스프레소와 벨벳 밀크폼을 혼합하여<br />커피와 우유의 풍미를 느낄
+              수 있는 커피
+            </p>
+            <p><span>&#35; 원두 &#35; 밀크폼</span></p></a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="img/manu/menu_img09.jpg" alt="" />
+            <p class="title">헤이즐넛 카푸치노</p>
+            <p class="sub_text">
+              헤이즐넛과 벨벳 밀크폼을 에스프레소와<br />혼합하여 풍미를 느낄 수
+              있는 커피
+            </p>
+            <p><span>&#35; 헤이즐넛 &#35; 밀크폼</span></p></a>
+        </li>
+        <li>
+          <a href="#">
+          <img src="img/manu/menu_img10.jpg" alt="" />
+            <p class="title">에스프레소 마끼아또</p>
+            <p class="sub_text">
+              에스프레소 위에 벨벳 밀크폼을 혼합하여<br />부드러운 마우스필을
+              느낄 수 있는 커피
+            </p>
+            <p><span>&#35; 원두 &#35; 밀크폼</span></p></a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="img/manu/menu_img11.jpg" alt="" />
+            <p class="title">에스프레소 도피오</p>
+            <p class="sub_text">
+              다크 초콜릿의 달콤함과 오렌지필의<br />산미를 느낄 수 있는
+              에스프레소 더블샷
+            </p>
+            <p><span>&#35; 다크 초콜릿 &#35; 원두</span></p></a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="img/manu/menu_img12.jpg" alt="" />
+            <p class="title">에스프레소</p>
+            <p class="sub_text">
+              다크 초콜릿의 달콤함과 오렌지필의<br />산미를 느낄 수 있는
+              에스프레소 더블샷
+            </p>
+            <p><span>&#35; 다크 초콜릿 &#35; 원두</span></p></a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="img/manu/menu_img13.jpg" alt="" />
+            <p class="title">로마노</p>
+            <p class="sub_text">
+              깊고 풍부한 에스프레소에 밀크폼과<br />향기로운 오렌지가 조화로운
+              로마노
+            </p>
+            <p><span>&#35; 오렌지 &#35; 밀크폼</span></p></a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="img/manu/menu_img14.jpg" alt="" />
+            <p class="title">오르조</p>
+            <p class="sub_text">
+              100% 보리를 원두처럼 로스팅하여<br />분쇄한 구수한 이탈리아 논커피
+              오르조
+            </p>
+            <p><span>&#35; 신선한 보리</span></p></a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="img/manu/menu_img15.jpg" alt="" />
+            <p class="title">비체린</p>
+            <p class="sub_text">
+              풍부한 밀크폼, 강력한 에스프레소,<br />헤이즐넛 초콜릿의 비주얼이
+              화려한 비체린
+            </p>
+            <p><span>&#35; 초콜릿 &#35; 원두</span></p></a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="img/manu/menu_img16.jpg" alt="" />
+            <p class="title">아포가또</p>
+            <p class="sub_text">
+              천일염으로 만든 이태리 정통 젤라또에<br />에스프레소를 가미한
+              아포가또
+            </p>
+            <p><span>&#35; 젤라또 &#35; 원두</span></p></a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="img/manu/menu_img17.jpg" alt="" />
+            <p class="title">제주 말차가또</p>
+            <p class="sub_text">
+              피오르디 라떼 젤라또에 에스프레소와<br />제주 녹차의 향이 어우러진
+              아포가또
+            </p>
+            <p><span>&#35; 녹차 &#35; 젤라또</span></p></a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="img/manu/menu_img18.jpg" alt="" />
+            <p class="title">제주 말차 샷 라떼</p>
+            <p class="sub_text">
+              100% 제주 녹차 파우더로 쌉싸름한 맛과<br />에스프레소의 향이
+              더해진 부드러운 라떼
+            </p>
+            <p><span>&#35; 녹차 &#35; 원두</span></p></a>
+        </li> -->
+      </ul>
+    </section>
+    <!-- scene04 end -->
+
+    <footer id="footer">
+      <div class="inner clear">
+        <div class="logo"><img src="img/main/foot_logo.jpg" alt="" /></div>
+        <div class="foot_content">
+          <aside class="foot_link clear">
+            <a href="#">해피포인트</a>
+            <a class="red" href="#">개인정보 처리방침</a>
+            <a href="#">영상정보처리기기운영 &#46; 관리방침</a>
+            <a href="#">이용약관</a>
+            <a href="#">윤리신고센터</a>
+            <a href="#">거래희망사전등록</a>
+          </aside>
+          <p>
+            서울시 서초구 양재동 <span>11-149</span>번지
+            <span>FAX.0505-076-0210</span> 고객상담센터
+            <span>080-731-2027</span>
+          </p>
+          <adrress>COPYRIGHT 2019 THE CAFFEE PASCUCCI</adrress>
+        </div>
+      </div>
+    </footer>
+    <!-- footer end -->
+
+    <script src="js/main.js"></script>
+    <script>
+      $("#main .sub_menu>li a").on("click", function () {
+        $("#main .sub_menu>li a").removeClass("on");
+        $(this).addClass("on");
+      });
+
+      var pro = [
+        {'name' : 'alt', 'st' : 'al'},
+        {'name' : 'alt', 'st' : 'al'},
+        {'name' : 'alt', 'st' : 'al'},
+      ]
+      console.log(pro[1].name);
+
+
+      var products = [{
+          name: '농구공',
+          description: '농구 황제 마이클 조던이 사용한 농구공입니다',
+          price: 100000,
+          seller:'min'
+      }, {
+          name: '축구공',
+          description: '축구 황제 메시가 사용한 축구공입니다',
+          price: 50000,
+          seller:'yea'
+      }]
+
+      var text = (products.length >= 1 && products[0].name ==='축구공')
+      console.log(text);
+
+      // 함수
+
+      const log = function() {
+        console.log('log')
+      }
+      function productsLength(arr) {
+        return arr.length;
+      }
+
+      productsLength(products);
+
+      function findSeller(object) {
+        return object.seller;
+      }
+      findSeller(products[0]);
+
+      // 반복문
+      function priceList(products) {
+        for(i = 0; i < products.length; i++) {
+          console.log(products[i].price);
+        }
+      }
+
+      priceList(products);
+
+
+      var allProducts = [{
+        name : '농구',
+        description: '농구공',
+        price: 100000,
+      },{
+        name : '축구',
+        description: '축구공',
+        price: 50000,
+      },{
+        name : '야구',
+        description: '야구공',
+        price: 75000,
+      }];
+
+      function priceSelec(products) {
+        var selecPrice = [];
+        for(i = 0; i < products.length; i++) {
+          if (products[i].price > 60000) selecPrice.push(products[i]);
+        }
+        console.log(selecPrice);
+      }
+
+      priceSelec(allProducts);
+
+
+     
+      var selecPrice1 = allProducts.filter(function (n) {
+        return n.price > 60000;
+      });
+
+      console.log(selecPrice1);
+
+
+
+      var articles = [{
+         name: '그로스 해킹의 모든 것',
+         description: '이건 꼭 읽어야 한다 시리즈',
+         url: 'https://brunch.co.kr/@beusable/39',
+         problems: [{
+             name: '문제 1',
+             answer: '답변 1'
+         }, {
+             name: '문제 2',
+             answer: '답변 2'
+         }]
+     }, {
+         name: 'IT 개발자를 이해하기 위한 모든 것 A to Z',
+         description: '그랩 짱',
+         url: "https://www.grabbing.me/70567b8743594adda5b62ebb929a6e03",
+         problems: []
+     }]
+
+     var articles2 = articles.filter(function (n) {
+        return n.problems.length > 1;
+      });
+
+      console.log(articles2);
+
+
+
+      // axios 테스트
+      axios.get('https://jsonplaceholder.typicode.com/todos/1').then(function(result) {
+        console.log('통신 결과, : ', result);
+      }).catch(function(error) {
+        console.log('에러 발생 : ', error);
+      })
+      console.log('바로실행')
+
+
+
+
+      const grab = {
+        name : '그랩',
+        age : 27
+      };
+      const people = ['민수','철수']
+
+      var {name, age} = grab;
+      console.log(name); //그랩 출력됩니다.
+      
+      const [minsoo, chulsoo] = people;
+      console.log(minsoo); //민수 출력됩니다.
+
+
+
+      // map / forEach 예제 (map은 새로운 배열을 return한다.)
+      allProducts.forEach(function(product, index) {
+        console.log(product);
+        console.log(index);
+      });
+      var productNames = allProducts.map(function(product, index) {
+        return product.name;
+      });
+      console.log(productNames);
+
+      // lambda function
+      const getName = (name) => {console.log(`${name}입니다.`)};
+      getName('만주'); //만주입니다.
+
+      // return 삭제 가능
+      const getName2 = (name) => `${name}입니다.`;
+    </script>
+  </body>
+</html>
