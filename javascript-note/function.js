@@ -74,3 +74,42 @@ document.write(returnTest(3,5));
 console.log(returnTest(3,5));
 
 //화살표 함수는 this, arguments가 바인딩 되지 않는다.
+
+//this란?
+//화살표 함수일때
+function Counter() {
+  this.value = 0;
+  this.add = amount => {
+    this.value += amount;
+  };
+}
+const counter = new Counter();
+console.log(counter.value); //0
+counter.add(5);
+console.log(counter.value); //5
+const addd = counter.add;
+add(5); //지역
+console.log(counter.value); //10
+counter.add(10); //지역
+console.log(counter.value); //20
+add(8); //지역
+console.log(counter.value); //28
+
+//일반 함수 일때
+function Counter2() {
+  this.value = 0;
+  this.add = function (amount) {
+    this.value += amount;
+  }
+}
+const counter2 = new Counter2();
+console.log(counter2.value); //0
+counter2.add(5);
+console.log(counter2.value); //5
+const addd2 = counter2.add;
+add2(10); //전역
+console.log(counter2.value); //5
+counter2.add(8); //지역
+console.log(counter2.value); //13
+
+// 비동기 처리 
