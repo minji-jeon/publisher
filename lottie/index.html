@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./lib/js/jquery-1.12.2.min.js" type="text/javascript"></script>
+  <script src="./lib/js/ScrollMagic.min.js" type="text/javascript"></script>
+  <script src="./lib/js/debug.addIndicators.min.js"></script>
+  <script src="./lib/js/TweenMax.min.js" type="text/javascript"></script>
+  <script src="./lib/js/animation.gsap.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"></script>
+
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.11/lottie.min.js" type="text/javascript"></script>
+  <style>
+    .round-test {
+      background-color: #000;
+    }
+  </style>
+</head>
+<body>
+  <!-- <lottie-player src="https://assets9.lottiefiles.com/datafiles/MUp3wlMDGtoK5FK/data.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop controls autoplay></lottie-player> -->
+  <!-- <div style="width:1067px;height:600px" id="lottie"></div> -->
+  <div class="round-test">
+    <svg id="circle-svg" version="1.1" id="circle-svg" width="500" height="500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <circle class="cir" cx="250" cy="250" r="200" stroke="#fff" stroke-width="2"  style="stroke-dasharray: 1256.13, 1256.13; stroke-dashoffset: 0px;"/>
+    </svg>
+  </div>
+</body>
+<script>
+  // var pathes = $('#circle-svg').find('circle');
+  //   pathes.each(function( i, path ) {
+  //       // 1번 부분
+  //       var total_length = path.getTotalLength();
+
+  //       // 2번 부분
+  //       path.style.strokeDasharray = total_length + " " + total_length;
+
+  //       // 3번 부분
+  //       path.style.strokeDashoffset = total_length;
+  //       //path.style.strokeDashoffset = 0;
+
+        // 4번 부분
+        $('#circle-svg').find('circle').animate({
+            "strokeDashoffset" : 0
+        }, 1500);
+   // });
+
+
+
+
+  // var animation1 = bodymovin.loadAnimation({
+  //   container: document.getElementById('lottie'),
+  //   renderer: 'svg',
+  //   loop: true,
+  //   autoplay: true,
+  //   path: 'loading.json'
+  // });
+  // lottie.loadAnimation({
+  //   container: element, // the dom element that will contain the animation
+  //   renderer: 'svg',
+  //   loop: true,
+  //   autoplay: true,
+  //   path: 'data.json' // the path to the animation json
+  // });
+</script>
+</html>
