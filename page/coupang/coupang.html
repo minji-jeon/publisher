@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=300, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>쿠팡!</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <script src="../../js/jquery-1.12.2.min.js"></script>
+  <script src="../../js/slick.min.js"></script>
+</head>
+
+<body class="page-coupang">
+  <!-- 탑배너 -->
+  <div class="top-banner">
+    <div class="content">
+      <div class="inner" style="background: #aef2ff;">
+        <a href="#">
+          <img src="./image/top-banner01.jpg" alt="배너">
+        </a>
+        <a href="#">
+          <img src="./image/top-banner02.jpg" alt="배너">
+        </a>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function() {
+      var $banner = $('.top-banner');
+      var bannerHeight = $banner.innerHeight();
+
+      $(window).scroll(function() {
+        var scrollTop = $(document).scrollTop();
+          
+        // 스크롤시 css 변경
+        if (scrollTop > 1) {
+          $banner.css('max-height','0');
+        } else {
+          $banner.css('max-height',''+ bannerHeight +'px');
+        }
+      });
+    });
+  </script>
+
+<!-- 헤더 -->
+  <header></header>
+
+  <main class="main">
+    <!-- 슬라이더 영역 -->
+    <div class="content">
+      <div class="inner">
+        <div class="slider-wrap">
+          <div class="slider">
+            <!-- 컨텐츠 -->
+            <div class="slide" style="background: url('https://loremflickr.com/2000/900') center center / 2560px no-repeat;" data-img='#fff  url(https://loremflickr.com/80/80) right 20px center / 30px no-repeat;'>
+              <a href="#" target="_self">
+                <div class="text-wrap">
+                  <p class="text"><span>로켓와우 회원전용 / 로켓프레시</span><br><span class="title">신선식품<br>새벽배송</span></p>
+                </div>
+              </a>
+            </div>
+            <!-- 컨텐츠 -->
+            <div class="slide" style="background: url('https://loremflickr.com/2000/900') center center / 2560px no-repeat;" data-img='#fff  url(https://loremflickr.com/80/80) right 20px center / 30px no-repeat;'>
+              <a href="#" target="_self">
+                <div class="text-wrap">
+                  <p class="text"><span>집에서 장보기</span><br><span class="title">쿠팡마트</span></p>
+                </div>
+              </a>
+            </div>
+            <!-- 컨텐츠 -->
+            <div class="slide" style="background: url('https://loremflickr.com/2000/900') center center / 2560px no-repeat;" data-img='#fff  url(https://loremflickr.com/80/80) right 20px center / 30px no-repeat;'>
+              <a href="#" target="_self">
+                <div class="text-wrap">
+                  <p class="text"><span>전문설치</span><br><span class="title">대형가전도<br>내일배송</span></p>
+                </div>
+              </a>
+            </div>
+            <!-- 컨텐츠 -->
+            <div class="slide" style="background: url('https://loremflickr.com/2000/900') center center / 2560px no-repeat;" data-img='#fff  url(https://loremflickr.com/80/80) right 20px center / 30px no-repeat;'>
+              <a href="#" target="_self">
+                <div class="text-wrap">
+                  <p class="text"><span class="title">쿠팡에서만<br>집콕 필수텝</span></p>
+                </div>
+              </a>
+            </div>
+            <!-- 컨텐츠 -->
+            <div class="slide" style="background: url('https://loremflickr.com/2000/900') center center / 2560px no-repeat;" data-img='#fff  url(https://loremflickr.com/80/80) right 20px center / 30px no-repeat;'>
+              <a href="#" target="_self">
+                <div class="text-wrap">
+                  <p class="text"><span>빈폴 키즈 외 70%</span><br><span class="title">fashion week</span></p>
+                </div>
+              </a>
+            </div>
+            <!-- 컨텐츠 -->
+            <div class="slide" style="background: url('https://loremflickr.com/2000/900') center center / 2560px no-repeat;" data-img='#fff  url(https://loremflickr.com/80/80) right 20px center / 30px no-repeat;'>
+              <a href="#" target="_self">
+                <div class="text-wrap">
+                  <p class="text"><span class="title">봄 리빙페어</span><br><span>최대 70</span></p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="red-box"></div>
+    <div class="box-wrap">
+      <div class="blue-box"></div>
+      <div class="green-box"></div>
+    </div>
+    <div class="yellow-banner-wrap">
+      <div class="yellow-banner">내가 위로 갈거다! 우하하하하</div>
+    </div>
+    <script>
+
+      $(function() {
+        // 띠배너
+        var $barBanner = $('.yellow-banner');
+        // 띠배너의 위치
+        var BannerTop = $barBanner.offset().top;
+
+        $(window).resize(function() {
+          BannerTop = $barBanner.offset().top;
+          console.log(BannerTop)
+        });
+        
+        // 스크롤 시 실행
+        $(window).scroll(function() {
+          scrollCheck();
+        });
+        
+        function scrollCheck() {
+          var scrollTop = $(document).scrollTop();
+          
+          // 스크롤시 css 변경
+          if (scrollTop > BannerTop) {
+            $barBanner.addClass('is-fixed');
+          } else {
+            BannerTop = $barBanner.offset().top;
+            $barBanner.removeClass('is-fixed');
+          }
+        }
+        
+      });
+
+    </script>
+    <div class="text-content">
+      <div class="common-inner">
+        <p class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum atque distinctio eos dicta modi, nam ullam minus cum dignissimos nihil aperiam quam vero magni reiciendis. Reprehenderit dicta itaque quia quaerat?</p>
+      </div>
+    </div>
+    <div class="img-wrap">
+      <div class="common-inner">
+        <img src="./image/slide-img05.jpg" alt="" class="img">
+      </div>
+    </div>
+    <div class="content-wrap">
+      <div class="common-inner">
+        <p class="img-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <div class="content-img">
+          <img src="./image/slide-img06.jpg" alt="" class="text-img">
+        </div>
+      </div>
+    </div>
+    <script>
+      $(function() {
+
+        $(window).scroll(function() {
+          checkShow('.text-content .text');
+          checkShow('.img-wrap .img');
+          checkShow('.content-wrap');
+        });
+
+        function checkShow(selector) {
+          var scrollTop = $(document).scrollTop();
+          var $selector = $(selector);
+
+          var startShow = $selector.offset().top - ($(window).height() / 1.5);
+          
+          if (scrollTop < startShow) {
+            $selector.removeClass('is-active');
+          }else {
+            $selector.addClass('is-active');
+          }
+        }
+        
+      });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  </main>
+  <script>
+  
+    var $slider = $('.slider');
+  
+    // 배너 슬라이드
+    $slider.slick({
+      dots: true,
+      slidesToShow: 1,
+      autoplay: true,
+      autoplaySpeed: 6000,
+      speed: 100,
+      fade: true,
+      pauseOnFocus: true,
+      arrows: false,
+      // 버튼 텍스트와 이미지 생성
+      customPaging : function(slider, i) {
+          // 버튼 텍스트
+          var text = $(slider.$slides[i]).find('p.text .title').html();
+          // 버튼 이미지
+          var baImg = $(slider.$slides[i]).data('img');
+          
+          return '<button style="background: ' + baImg + '">'+ text + '</button>';
+        },
+      }); 
+  
+      // 버튼 hover시 슬라이드 이동
+      $('.slick-dots li button').on('mouseenter focus', function() {
+        $(this).trigger( "click" );
+      });
+  
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>userAgent-test</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <script src="../../js/jquery-1.12.2.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ua-parser-js@0/dist/ua-parser.min.js"></script>
+  <style>
+    .wrap {
+      display: none;
+      width: 100vw;
+      height: 100vh;
+      text-align: center;
+      background-color: rgb(228, 238, 255);
+    }
+    .wrap.active {
+      display: block;
+    }
+    .text {
+      padding-top: 200px;
+      padding-bottom: 150px;
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+      color: rgb(28, 57, 107);
+    }
+    .end-wrap {
+      padding-top: 200px;
+    }
+    .end-wrap .text {
+      padding-top: 10px;
+    }
+    .end-wrap .text.browser-text {
+      padding-bottom: 10px;
+    }
+    button {
+      display: inline-block;
+      margin-bottom: 20px;
+      margin-right: 30px;
+      width: 150px;
+      height: 50px;
+      line-height: 50px;
+      color: rgb(138, 175, 238);
+      border-radius: 10px;
+      background-color: rgb(228, 238, 255);
+      box-shadow: -2px -2px 5px rgba(255, 255, 255, 1),3px 3px 5px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s;
+      outline: none;
+    }
+    button:hover {
+      color: rgb(57, 81, 122);
+    }
+    button.active {
+      box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 1),inset 3px 3px 5px rgba(0, 0, 0, 0.1);
+    }
+    /* button + button {
+      margin-left: 30px;
+    } */
+    .safari, .browser-text {
+      display: none;
+    }
+    .banner {
+      color: rgb(57, 81, 122);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap type-wrap active">
+    <p class="text">당신이 지금 사용하는 것은?</p>
+    <button class="mobile" data-type="mobile">모바일</button>
+    <button class="tablet" data-type="tablet">테블릿</button>
+    <button class="desktop">피씨</button>
+  </div>
+  <div class="wrap os-mt-wrap">
+    <p class="text">당신이 사용하고 있는 os는?</p>
+    <button class="android" data-os="Android">Android</button>
+    <button class="ios" data-os="iOS">iOS</button>
+  </div>
+  <div class="wrap os-pc-wrap">
+    <p class="text">당신이 사용하고 있는 os는?</p>
+    <button class="windows" data-os="Windows">Windows</button>
+    <button class="mac" data-os="Mac OS">Mac OS</button>
+  </div>
+  <div class="wrap browser-wrap">
+    <p class="text">당신이 사용하고 있는 브라우저는?</p>
+    <button class="chrome" data-browser="Chrome">크롬</button>
+    <button class="firefox" data-browser="Firefox">파이어폭스</button>
+    <button class="ie" data-browser="IE">IE</button>
+    <button class="samsung" data-browser="Samsung Browser">삼성</button>
+    <button class="edge" data-browser="Edge">엣지</button>
+    <button class="whale" data-browser="Whale">웨일</button>
+    <button class="opera" data-browser="Opera">오페라</button>
+    <button class="safari" data-browser="Safari">사파리</button>
+    <button class="other">기타</button>
+  </div>
+  <div class="wrap end-wrap">
+    <p class="text browser-text">당신의 브라우저는 "<span class="this-browser"></span>"입니다.</p>
+    <p class="text">당신이 사용하고 있는 엔진은 "<span class="engine"></span>"이고, <br>OS의 버전은 "<span class="version version2"></span>"이며, <br>브라우저의 버전은 "<span class="version"></span>"입니다.</p>
+    <a class="banner" href="#">
+      <p>앱을 지금 "<span class="store"></span>"에서 다운받으세요!</p>
+    </a>
+  </div>
+  <script>
+    var parser = new UAParser();
+ 
+    // by default it takes ua string from current browser's window.navigator.userAgent
+    var result = parser.getResult();
+
+    var browser = result.browser.name;
+    var deviceVendor = result.device.vendor;
+    var deviceModel = result.device.model;
+    var deviceType = result.device.type;
+    var os = result.os.name;
+    var version2 = result.os.version;
+    var version = result.browser.version;
+    var name = result.engine.name;
+
+    console.log(parser)
+    console.log(result)
+    console.log(browser +'/'+ deviceVendor +'/'+ deviceModel +'/'+ deviceType +'/'+ os +'/'+ parseInt(version) +'/'+ name)
+
+
+    $('button').on('click', function() {
+      $('button').removeClass('active');
+      $(this).addClass('active');
+    });
+    // type 구분
+    $('.type-wrap button').on('click', function() {
+      
+      var thisType = $(this).data('type');
+      setTimeout(function(){
+        if(deviceType === thisType) {
+            $('.wrap').removeClass('active');
+          if(thisType === 'mobile' || thisType === 'tablet') {
+            $('.os-mt-wrap').addClass('active');
+          } else {
+            $('.os-pc-wrap').addClass('active');
+          }
+        } else {
+          alert('잘못되었습니다 다시 확인해 주세요.');
+        }
+      },200);
+    });
+
+    // os 구분
+    $('.os-mt-wrap button').on('click', function() {
+      var thisOs = $(this).data('os');
+
+      setTimeout(function(){
+        if(os === thisOs) {
+          $('.wrap').removeClass('active');
+          $('.browser-wrap').addClass('active');
+        } else {
+          alert('잘못되었습니다 다시 확인해 주세요.');
+        }
+      },200);
+    });
+
+    $('.os-pc-wrap button').on('click', function() {
+      var thisOs = $(this).data('os');
+
+      setTimeout(function(){
+        if(os === thisOs) {
+          $('.wrap').removeClass('active');
+          $('.browser-wrap').addClass('active');
+        } else {
+          alert('잘못되었습니다 다시 확인해 주세요.');
+        }
+      },200);
+    });
+
+    // 브라우저 구분
+    if (os === 'Mac OS' || os === 'iOS') $('.safari').css({'display':'inline'});
+
+    $('.browser-wrap button').on('click', function() {
+      var thisBrowser = $(this).data('browser');
+      var checkBrowser = [];
+      
+      setTimeout(function(){
+        // 해당 브라우저가 없을때
+        if(thisBrowser === undefined) {
+          $('.browser-wrap button').each(function() {
+            var dd = $(this).data('browser');
+            checkBrowser.push(dd)
+          });
+
+          if(checkBrowser.indexOf(browser) < 0) {
+            $('.wrap').removeClass('active');
+            $('.end-wrap').addClass('active');
+            $('.browser-text').css({'display':'inline'});
+          } else {
+            alert('사용하고있는 브라우저가 있습니다. 다시 확인해주세요.');
+          }
+          
+        }else if(browser.indexOf(thisBrowser) < 0) {
+          alert('잘못되었습니다 다시 확인해 주세요.');
+        } else {
+          $('.wrap').removeClass('active');
+          $('.end-wrap').addClass('active');
+        }
+      },200);
+    });
+
+    $('.this-browser').text(browser);
+    $('.engine').text(name);
+    $('.version').text(version);
+    $('.version2').text(version2);
+
+    //os에 따른 앱 다운받는곳 구분
+    if(os === 'Android' || os === 'Windows') {
+      $('.store').text('Google Play');
+    } else if(os === "iOS" || os === "Mac OS") {
+      $('.store').text('App Store');
+    }
+  </script>
+</body>
+</html>

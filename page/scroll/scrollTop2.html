@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <script src="../../js/jquery-1.12.2.min.js"></script>
+
+  <script src="../../js/ScrollMagic.min.js"></script>
+
+  <script src="../../js/slick.min.js"></script>
+  <script src="../../js/debug.addIndicators.min.js"></script>
+  <script src="../../js/TweenMax.min.js"></script>
+  <script src="../../js/animation.gsap.js"></script>
+</head>
+<body class="scroll-ani">
+  <div class="wrap">
+    <!-- 헤더 -->
+    <header class="ly-header">
+      <div class="header-inner">
+        <!-- 로고 -->
+        <div class="logo-wrap">
+          <h1>I'm Logo</h1>
+        </div>
+        <!-- 검색 & gnb열기 -->
+        <div class="header-btn">
+          <div class="search-content">
+            <button class="search-show"><span class="blind">검색하기</span></button>
+            <div class="search-input">
+              <label class="blind" for="search">search</label>
+              <input type="search" id="search">
+              <button type="submit" class="search-btn"><span class="blind">검색</span></button>   
+              <button class="search-clear"><span class="blind">clear</span></button> 
+            </div>
+          </div>
+          <div class="nav-btn">
+            <button class="nav-show"><span class="blind">메뉴 열기/닫기</span></button>
+          </div>
+        </div>
+        <!-- 네비게이션 시작 -->
+        <nav class="header-nav">
+          <h2 class="blind">네비게이션</h2>
+          <div class="nav-content">
+            <div class="nav-d1">
+              <!-- d1 -->
+              <a href="#">메뉴1</a>
+              <div class="nav-d2">
+                <!-- d2 -->
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+              </div>
+            </div>
+            <div class="nav-d1">
+              <!-- d1 -->
+              <a href="#">메뉴2</a>
+              <div class="nav-d2">
+                <!-- d2 -->
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+              </div>
+            </div>
+          </div>
+          <div class="change-img">
+            <!-- 이미지가 없으니 생략 -->
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- 메인 -->
+    <main class="ly-main">
+      <section class="main-visual">
+        <div class="slide-wrap">
+          <div class="slide-content">
+            <!-- 슬라이드 01 -->
+            <div class="slide">
+              <div class="slide-ain">
+                <div class="inner">
+                  <!-- <div class="slide-txt">
+                    <p class="title">Abcde fgh ig<br>klmnop qrstuv wxyz.</p>
+                    <p class="desc">
+                      Lorem ipsum dolor sit amet consectetur. <br>molestiae error libero, eaque veritatis necessitatibus! <br>In aut expedita deserunt vel alias soluta ipsa!
+                    </p>
+                  </div> -->
+                  <div class="slide-img tow">
+                    <div class="front">
+                      <img src="./turntable 003.png" alt="" class="">
+                    </div>
+                    <div class="back no-active">
+                      <img src="./turntable 020.png" alt="">
+                    </div>
+                  </div>
+              </div>
+              </div>
+            </div>
+            <!-- 슬라이드 02 -->
+            <div class="slide">
+              <div class="slide-ain">
+                <div class="inner">
+                  <!-- <div class="slide-txt">
+                    <p class="title">klmnop qrstuv wxyz<br>Abcde fgh ig.</p>
+                    <p class="desc">
+                      Lorem ipsum dolor sit amet consectetur. <br>molestiae error libero, eaque veritatis necessitatibus! <br>In aut expedita deserunt vel alias soluta ipsa!
+                    </p>
+                  </div> -->
+                  <div class="slide-img tow">
+                    <div class="front">
+                      <img src="./turntable 003.png" alt="" class="">
+                    </div>
+                    <div class="back no-active">
+                      <img src="./turntable 020.png" alt="">
+                    </div>
+                  </div>
+              </div>
+              </div>
+            </div>
+            <!-- 슬라이드 03 -->
+            <div class="slide">
+              <div class="slide-ain">
+                <div class="inner">
+                  <!-- <div class="slide-txt">
+                    <p class="title">Abcde fgh ig<br>klmnop qrstuv wxyz.</p>
+                    <p class="desc">
+                      Lorem ipsum dolor sit amet consectetur. <br>molestiae error libero, eaque veritatis necessitatibus! <br>In aut expedita deserunt vel alias soluta ipsa!
+                    </p>
+                  </div> -->
+                  <div class="slide-img tow">
+                    <div class="front">
+                      <img src="./turntable 003.png" alt="" class="">
+                    </div>
+                    <div class="back no-active">
+                      <img src="./turntable 020.png" alt="">
+                    </div>
+                  </div>
+              </div>
+              </div>
+            </div>
+            <!-- 슬라이드 04 -->
+            <div class="slide">
+              <div class="slide-ain">
+                <div class="inner">
+                  <!-- <div class="slide-txt">
+                    <p class="title">klmnop qrstuv wxyz<br>Abcde fgh ig.</p>
+                    <p class="desc">
+                      Lorem ipsum dolor sit amet consectetur. <br>molestiae error libero, eaque veritatis necessitatibus! <br>In aut expedita deserunt vel alias soluta ipsa!
+                    </p>
+                  </div> -->
+                  <div class="slide-img tow">
+                    <div class="front">
+                      <img src="./turntable 003.png" alt="" class="">
+                    </div>
+                    <div class="back no-active">
+                      <img src="./turntable 020.png" alt="">
+                    </div>
+                  </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <script>
+        $('.slide-img').on('click', function() {
+          console.log('ddd')
+          $(this).find('div').toggleClass('no-active');
+        });
+
+        $(function () { // wait for document ready
+          var flightpath = {
+            entry : {
+              curviness: 1.25,
+              autoRotate: true,
+              values: [
+                  {x: 100,	y: -20},
+                  {x: 300,	y: 10}
+                ]
+            },
+            looping : {
+              curviness: 1.25,
+              autoRotate: true,
+              values: [
+                  {x: 510,	y: 60},
+                  {x: 620,	y: -60},
+                  {x: 500,	y: -100},
+                  {x: 380,	y: 20},
+                  {x: 500,	y: 60},
+                  {x: 580,	y: 20},
+                  {x: 620,	y: 15}
+                ]
+            }
+          };
+          $('.slide-img .no-active').css({'bezier':flightpath.entry});
+
+            // .add(TweenMax.to($("#plane"), 1.2, {css:{bezier:flightpath.entry}, ease:Power1.easeInOut}))
+            // .add(TweenMax.to($("#plane"), 2, {css:{bezier:flightpath.looping}, ease:Power1.easeInOut}))
+            // .add(TweenMax.to($("#plane"), 1, {css:{bezier:flightpath.leave}, ease:Power1.easeInOut}));
+
+        });
+      </script>
+      <!-- 제품 상세보기 -->
+      <section class="item-view">
+        <div class="item-inner">
+          <div class="item-wrap">
+            <!-- item01 -->
+            <div class="item-bg">
+              <div class="round-wrap">
+                <span class="round"></span>
+                <span class="round"></span>
+                <span class="round"></span>
+                <span class="round"></span>
+                <span class="round"></span>
+                <span class="round"></span>
+                <span class="round"></span>
+                <span class="round"></span>
+                <span class="round"></span>
+                <span class="round"></span>
+              </div>
+              <div class="item-img">
+                <!-- 이미지가 없으니까 패스 -->
+              </div>
+            </div>
+            <!-- item02 -->
+            <div class="item-bg">
+              <div class="round-wrap">
+                <span class="round"></span>
+                <span class="round"></span>
+                <span class="round"></span>
+                <span class="round"></span>
+                <span class="round"></span>
+                <span class="round"></span>
+                <span class="round"></span>
+                <span class="round"></span>
+                <span class="round"></span>
+                <span class="round"></span>
+              </div>
+              <div class="item-img">
+                <!-- 이미지가 없으니까 패스 -->
+              </div>
+            </div>
+            <!-- item03 -->
+            <div class="item-bg">
+              <div class="round-wrap">
+                <span class="round"></span>
+                <span class="round"></span>
+                <span class="round"></span>
+                <span class="round"></span>
+                <span class="round"></span>
+                <span class="round"></span>
+                <span class="round"></span>
+                <span class="round"></span>
+                <span class="round"></span>
+                <span class="round"></span>
+              </div>
+              <div class="item-img">
+                <!-- 이미지가 없으니까 패스 -->
+              </div>
+            </div>
+            <!-- item04 -->
+            <div class="item-bg">
+              <div class="round-wrap">
+                <span class="round"></span>
+                <span class="round"></span>
+                <span class="round"></span>
+                <span class="round"></span>
+                <span class="round"></span>
+                <span class="round"></span>
+                <span class="round"></span>
+                <span class="round"></span>
+                <span class="round"></span>
+                <span class="round"></span>
+              </div>
+              <div class="item-img">
+                <!-- 이미지가 없으니까 패스 -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 라인 섹션 -->
+      <section class="line-scroll">
+        <iframe id="line-wrap" src="./linescrollss.svg"></iframe>
+        <!-- <svg width="1500px" height="2310px" id="line" data-name="line" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 2310" style="stroke-dasharray: 1009.23px; stroke-dashoffset: 1009.23px;" fill="none"> 
+          <path id="step-line" d="M1490 0 V40 C1490 65 1465 90 1440 90 H400 C375 90 350 115 350 140 V550 Q350 600 400 600 H800 C810 600 810 560 820 560 C830 560 830 600 840 600 C855 600 855 530 870 530 C885 530 885 600 900 600 C905 600 905 580 910 580 C915 580 915 600 920 600 H1100 Q1150 600 1150 650 V1115 Q1150 1165 1100 1165 H950 L940 1135 L970 1113 L933 1113 L923 1087 L914 1113 L877 1113 L907 1135 L897 1165 H400 Q350 1165 350 1215 V1660 Q350 1710 400 1710 H950 C960 1710 1055 1665 1000 1640 C995 1638 980 1640 980 1655 Q980 1625 955 1625 C925 1625 950 1710 980 1710 H1100 Q1150 1710 1150 1760 V2195 Q1150 2245 1100 2245 H400 Q350 2245 350 2295 V2405" stroke="#9acd32" fill="transparent" stroke-width="5">
+        </svg> -->
+        <div class="line-inner">
+          <!-- 01 -->
+          <div class="line-content">
+            <div class="line-img">
+              <!-- 이미지가 없으니까 패스 -->
+            </div>
+            <div class="line-txt">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Explicabo quaerat molestiae temporibus <br>nam nemo suscipit non mollitia vel reprehenderit exercitationem a dolore debitis, <br>voluptates ipsam laudantium, unde laboriosam enim cupiditate.</p>
+            </div>
+          </div>
+          <!-- 02 -->
+          <div class="line-content">
+            <div class="line-img">
+              <!-- 이미지가 없으니까 패스 -->
+            </div>
+            <div class="line-txt">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Explicabo quaerat molestiae temporibus nam nemo suscipit non<br>mollitia vel reprehenderit exercitationem a dolore debitis, <br>voluptates ipsam laudantium, unde laboriosam enim cupiditate.</p>
+            </div>
+          </div>
+          <!-- 03 -->
+          <div class="line-content">
+            <div class="line-img">
+              <!-- 이미지가 없으니까 패스 -->
+            </div>
+            <div class="line-txt">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Explicabo quaerat molestiae temporibus <br>nam nemo suscipit non mollitia vel reprehenderit exercitationem a dolore debitis, <br>voluptates ipsam laudantium, unde laboriosam enim cupiditate.</p>
+            </div>
+          </div>
+          <!-- 04 -->
+          <div class="line-content">
+            <div class="line-img">
+              <!-- 이미지가 없으니까 패스 -->
+            </div>
+            <div class="line-txt">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Explicabo quaerat molestiae temporibus nam nemo suscipit non <br>mollitia vel reprehenderit exercitationem a dolore debitis, <br>voluptates ipsam laudantium, unde laboriosam enim cupiditate.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="left-scroll">
+        <div class="left-scroll-start">
+          <div class="left-wrap">
+            <!-- 01 - round -->
+            <div class="left-inner round">
+              <a href="#" class="left-num">01</a>
+              <div class="left-content"id="round01">
+                <div class="left-img" >
+                  <!-- 이미지가 없으니까 패스 -->
+                </div>
+                <div class="left-txt">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Explicabo quaerat molestiae temporibus nam nemo suscipit non <br>mollitia vel reprehenderit exercitationem a dolore debitis, <br>voluptates ipsam laudantium, unde laboriosam enim cupiditate.</p>
+                </div>
+              </div>
+              <div class="left-content">
+                <div class="left-img">
+                  <!-- 이미지가 없으니까 패스 -->
+                </div>
+                <div class="left-txt">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Explicabo quaerat molestiae temporibus nam nemo suscipit non <br>mollitia vel reprehenderit exercitationem a dolore debitis, <br>voluptates ipsam laudantium, unde laboriosam enim cupiditate.</p>
+                </div>
+              </div>
+              <div class="left-content">
+                <div class="left-img">
+                  <!-- 이미지가 없으니까 패스 -->
+                </div>
+                <div class="left-txt">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Explicabo quaerat molestiae temporibus nam nemo suscipit non <br>mollitia vel reprehenderit exercitationem a dolore debitis, <br>voluptates ipsam laudantium, unde laboriosam enim cupiditate.</p>
+                </div>
+              </div>
+            </div>
+            <!-- 02 - circle -->
+            <div class="left-inner circle">
+              <a href="#" class="left-num">02</a>
+              <div class="left-content" id="circle02">
+                <div class="left-img">
+                  <!-- 이미지가 없으니까 패스 -->
+                </div>
+                <div class="left-txt">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Explicabo quaerat molestiae temporibus nam nemo suscipit non <br>mollitia vel reprehenderit exercitationem a dolore debitis, <br>voluptates ipsam laudantium, unde laboriosam enim cupiditate.</p>
+                </div>
+              </div>
+              <div class="left-content">
+                <div class="left-img">
+                  <!-- 이미지가 없으니까 패스 -->
+                </div>
+                <div class="left-txt">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Explicabo quaerat molestiae temporibus nam nemo suscipit non <br>mollitia vel reprehenderit exercitationem a dolore debitis, <br>voluptates ipsam laudantium, unde laboriosam enim cupiditate.</p>
+                </div>
+              </div>
+              <div class="left-content">
+                <div class="left-img">
+                  <!-- 이미지가 없으니까 패스 -->
+                </div>
+                <div class="left-txt">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Explicabo quaerat molestiae temporibus nam nemo suscipit non <br>mollitia vel reprehenderit exercitationem a dolore debitis, <br>voluptates ipsam laudantium, unde laboriosam enim cupiditate.</p>
+                </div>
+              </div>
+            </div>
+            <!-- 03 - roundCircle -->
+            <div class="left-inner roundCircle">
+              <a href="#" class="left-num">03</a>
+              <div class="left-content" id="roundCircle03">
+                <div class="left-img">
+                  <!-- 이미지가 없으니까 패스 -->
+                </div>
+                <div class="left-txt">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Explicabo quaerat molestiae temporibus nam nemo suscipit non <br>mollitia vel reprehenderit exercitationem a dolore debitis, <br>voluptates ipsam laudantium, unde laboriosam enim cupiditate.</p>
+                </div>
+              </div>
+              <div class="left-content">
+                <div class="left-img">
+                  <!-- 이미지가 없으니까 패스 -->
+                </div>
+                <div class="left-txt">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Explicabo quaerat molestiae temporibus nam nemo suscipit non <br>mollitia vel reprehenderit exercitationem a dolore debitis, <br>voluptates ipsam laudantium, unde laboriosam enim cupiditate.</p>
+                </div>
+              </div>
+              <div class="left-content">
+                <div class="left-img">
+                  <!-- 이미지가 없으니까 패스 -->
+                </div>
+                <div class="left-txt">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Explicabo quaerat molestiae temporibus nam nemo suscipit non <br>mollitia vel reprehenderit exercitationem a dolore debitis, <br>voluptates ipsam laudantium, unde laboriosam enim cupiditate.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="ly-footer">
+      <div class="footer-inner">
+        footer is footer is footer is footer is footer!
+      </div>
+    </footer>
+  </div>
+  
+  <script>
+    $(function() {
+      
+
+      // 검색열기
+      $('.search-show').on('click', function() {
+        $('.search-content').addClass('active');
+        $('input#search').focus();
+      });
+
+      // 검색내용 삭제 버튼
+      $('input#search').on('keyup', function() {
+        var ch = $(this).val() === "";
+        
+        ch ? $('.search-clear').removeClass('show') : $('.search-clear').addClass('show')
+        
+      });
+
+      // nav 이미지 컬러
+      $('.nav-d1 a').on('mouseenter', function() {
+        var randomColor = '#' + Math.round(Math.random() * 0XFFFFFF).toString(16);
+
+        $('.change-img').css({'background-color':randomColor})
+      })
+
+      // nav열기
+      $('.nav-show').on('click', function() {
+        $('.header-nav').toggleClass('is-show');
+      })
+
+      // 메일 슬라이더
+      $('.slide-content').slick({
+        dots: true,
+        infinite: true,
+        speed: 1000,
+        // fade: true,
+        // autoplay: true,
+        autoplaySpeed: 8000,
+        pauseOnHover:false,
+      });
+
+      $('.slide-content .slide').each(function() {
+        var bgColor = '#' + Math.round(Math.random() * 0XFFFFFF).toString(16);
+        var imgColor = '#' + Math.round(Math.random() * 0XFFFFFF).toString(16);
+
+        // $(this).find('.slide-ain').css({'background-color':bgColor});
+        // $(this).find('.slide-img').css({'background-color':imgColor});
+
+      });
+
+      // item 슬라이더
+      $('.item-wrap').slick({
+        dots: true,
+        infinite: true,
+        speed: 0,
+        fade: true,
+        arrows:false,
+      });
+
+      $('.item-bg').each(function(i) {
+        var bgColor = '#' + Math.round(Math.random() * 0XFFFFFF).toString(16);
+        var imgColor = '#' + Math.round(Math.random() * 0XFFFFFF).toString(16);
+
+        $(this).css({'background-color':bgColor});
+        $(this).find('.item-img').css({'background-color':imgColor});
+
+          $('.item-wrap .slick-dots li:eq('+i+') button').css({'background-color':imgColor});
+      });
+
+      $('.item-bg .round').each(function() {
+        var size = Math.floor(Math.random() * 180) + 'px';
+        var position_l = Math.floor(Math.random() * 100) + '%';
+        var position_t = Math.floor(Math.random() * 100) + '%';
+
+        $(this).css({'left':position_l,'top':position_t,'width':size,'height':size});
+      });
+
+      // item mousemove 
+      $('.round-wrap').on('mousemove', function() {
+        var thisHeight = $(this).innerHeight() / 2;
+        var thisWidth = $(this).innerWidth() / 2;
+
+        var clientX = (event.clientX - $(this).offset().left) - thisWidth;
+        var clientY = (event.clientY - ($(this).offset().top - $(window).scrollTop())) - thisHeight;
+
+        $(this).find('.round').each(function(i) {
+          $(this).css({'transform': 'translate('+clientX / (i * 10)+'px,'+clientY / (i * 5)+'px)'})
+        });
+
+      });
+
+      // 스크롤 애니매이션
+
+      // svg 애니매이션
+
+      $('#line-wrap').load(function() {  //iframe 로드 후 실행
+        function pathPrepare ($el) {
+          var lineLength = $el[0].getTotalLength();
+          $el.css("stroke-dasharray", lineLength);
+          $el.css("stroke-dashoffset", lineLength);
+        }
+
+        var $step = $('#line-wrap').contents().find('#step-line');
+
+        // prepare SVG
+        pathPrepare($step);
+
+        var controller = new ScrollMagic.Controller();
+        // build tween
+        var tween = new TimelineMax()
+          .add(TweenMax.to($step, 2, {strokeDashoffset: 0, ease:Linear.easeNone}))		// change color during the whole thing
+
+        // build scene
+        var scene = new ScrollMagic.Scene({triggerElement: ".line-scroll", duration: 2310, tweenChanges: true})
+                .setTween(tween)
+                // .addIndicators() // add indicators (requires plugin)
+                .addTo(controller);
+      });
+
+      // init controller
+      var controller = new ScrollMagic.Controller();
+
+
+
+      // header scroll-start
+      new ScrollMagic.Scene({triggerElement: ".slide-img",triggerHook: 0,})
+      .setClassToggle(".ly-header", "scroll-start") // add class toggle
+      // .addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
+      .addTo(controller);
+
+      $(document).on('mousewheel', function(e){
+        var scrollUp = e.originalEvent.wheelDelta;
+        if (scrollUp < 0) {
+          new ScrollMagic.Scene({triggerElement: ".item-view",triggerHook: 0,})
+            .setClassToggle(".ly-header", "scroll-bown") // add class toggle
+            // .addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
+            .addTo(controller);
+        } else {
+          $('.ly-header').removeClass('scroll-bown');
+        }
+      });
+
+      // 좌우 스크롤
+      $(".left-scroll-start").on('mousewheel',function(e){
+        e.preventDefault();
+
+        var wheelDelta = e.originalEvent.wheelDelta;
+
+        if(wheelDelta > 0){
+          $(this).scrollLeft(-(wheelDelta / 3) + $(this).scrollLeft());
+        }else{
+          $(this).scrollLeft(-(wheelDelta / 3) + $(this).scrollLeft());
+        }
+      });
+
+      // left scroll
+				// init controller
+				var controller2 = new ScrollMagic.Controller({container: ".left-scroll", vertical: false});
+
+				// build scene
+				var scene2 = new ScrollMagic.Scene({triggerElement: ".left-inner.circle",triggerHook: 0.03})
+					.addTo(controller2)
+          // .addIndicators() // add indicators (requires plugin)
+          .setClassToggle(".left-inner.circle", "close")
+          // .setTween(TweenMax.to(".left-inner .animated", 0.5, {backgroundColor: "green"}))
+          
+        var scene3 = new ScrollMagic.Scene({triggerElement: ".left-inner.roundCircle",triggerHook: 0.06})
+        .addTo(controller2)
+        // .addIndicators() // add indicators (requires plugin)
+        .setClassToggle(".left-inner.roundCircle", "close")
+        // .setTween(TweenMax.to(".left-inner .animated", 0.5, {backgroundColor: "green"}))
+
+        $('.left-scroll-start').on('mousewheel',function(e){
+          var scrollNum = $('.left-scroll-start').scrollLeft();
+          (scrollNum > 5) ?  $('.left-inner.round').addClass('close') : $('.left-inner.round').removeClass('close') 
+        });
+
+        // left scroll 버튼클릭 시
+        $('.left-num').on('click', function(e) {
+          e.preventDefault();
+          var leftNum = $(this).parent('.left-inner').offset().left;
+          var scrollNum = $('.left-scroll-start').scrollLeft();
+          console.log(leftNum) ;
+          console.log(scrollNum) ;
+          $('.left-scroll-start').stop().animate({'scrollLeft':(scrollNum + leftNum)});
+        });
+
+
+
+    });
+  </script>
+</body>
+</html>

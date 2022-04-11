@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>userAgent-test</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <script src="../../js/jquery-1.12.2.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ua-parser-js@0/dist/ua-parser.min.js"></script>
+</head>
+<body>
+  <div class="people-wrap">
+    <p id="browser"></p>   
+    <p id="device"></p>   
+    <p id="os"></p>   
+    <p id="version"></p>   
+    <p id="name"></p>   
+    <p id="architecture"></p>
+
+    <br><br><br>
+
+    <a id="btn" href="#">스토어 이동</a>
+
+    <br><br><br>
+    
+    <div class="os-btn-wrap">
+      <a class="os-btn mac" href="#">Mac 사용자 버튼</a>
+      <span>/</span>
+      <a class="os-btn window" href="#">Window 사용자 버튼</a>
+    </div>
+  </div>
+  <script>
+    var parser = new UAParser();
+ 
+    // by default it takes ua string from current browser's window.navigator.userAgent
+    var result = parser.getResult();
+
+    var browser = result.browser.name;
+    var deviceVendor = result.device.vendor;
+    var deviceModel = result.device.model;
+    var deviceType = result.device.type;
+    var os = result.os.name;
+    var version = result.os.version;
+    var name = result.engine.name;
+    var architecture = result.cpu.architecture;
+
+    $('#browser').text('브라우저는 '+ browser +'')
+    $('#device').text('디바이스는 '+ deviceVendor +'의 '+ deviceModel +' 타입은 '+ deviceType +'')
+    $('#os').text('os는 '+ os +'')
+    $('#version').text('버전는 '+ version +'')
+    $('#name').text('엔진는 '+ name +'')
+    $('#architecture').text('architecture는 '+ architecture +'')
+    console.log(result.browser);       
+    console.log(result.device);       
+    console.log(result.os);            
+    console.log(result.os.version);    
+    console.log(result.engine.name);    
+    console.log(result.cpu.architecture);   
+
+    if (deviceType === 'tablet' && os === 'Android') {
+      alert('갤럭시 텝을 사용하고 있습니다.')
+    } else if (deviceType === 'tablet' && os === 'iOS') {
+      alert('아이패드을 사용하고 있습니다.')
+    }
+
+    $('#btn').on('click', function() {
+      if(os === 'Android') {
+        alert('Google Play로 이동합니다.')
+      } else if(os === "iOS") {
+        alert('App Store로 이동합니다.')
+      } else if(deviceType === undefined) {
+        if(os === 'Windows') {
+          alert('Google Play(pc)로 이동합니다.')
+        } else if(os === "Mac OS") {
+          alert('App Store(pc)로 이동합니다.')
+        }
+      }
+    });
+
+    $('.os-btn-wrap .os-btn').on('click', function() {
+
+      var macUse = $(this).hasClass('mac');
+      var windowUse = $(this).hasClass('window');
+
+
+      if(os === 'Windows') {
+        windowUse ? alert('당신은 Windows사용자가 맞습니다.') : alert('당신은 Mac사용자가 아닙니다. 그것도 모릅니까?')
+      } else if(os === "Mac OS") {
+        macUse ? alert('당신은 Mac사용자가 맞습니다.') : alert('당신은 Windows사용자가 아닙니다. 그것도 모릅니까?')
+      } else {
+        alert('Mac과 Window를 안쓰는데 왜 누릅니까?')
+      }
+    });
+  </script>
+</body>
+</html>

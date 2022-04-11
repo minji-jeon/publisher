@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <script src="../../js/jquery-1.12.2.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+  <style>
+    .menu-s .wrap {
+      height: 100vh;
+      text-align: center;
+      background: rgb(168, 208, 255);
+    }
+    .menu-s .title {
+      padding-top: 200px;
+      margin-bottom: 50px;
+      font-size: 40px;
+      font-weight: 600;
+      color:rgb(39, 73, 112);
+    }
+    .menu-s .menu-btn-wrap {
+      display: inline-block;
+      position: relative;
+      width: 180px;
+      height: 50px;
+      border: 2px solid rgb(51, 88, 131);
+      border-radius: 10px;
+      margin: 0 10px;
+      background-color: rgb(65, 117, 177);
+      box-sizing: border-box;
+    }
+    .menu-s .menu-btn {
+      display: inline-block;
+      position: absolute;
+      top: -10px;
+      left: -2px;
+      width: 180px;
+      height: 50px;
+      border: 2px solid rgb(51, 88, 131);
+      border-radius: 10px;
+      padding: 0;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 50px;
+      color: #fff;
+      vertical-align: top;
+      background-color: rgb(119, 163, 214);
+      box-sizing: border-box;
+    }
+    .menu-s .txt {
+      font-size: 25px;
+      font-weight: 500;
+      padding-top: 70px;
+      color:rgb(47, 99, 158);
+    }
+    .menu-s .txt .meun-wrap {
+      display: inline-block;
+      font-size: 30px;
+      text-align: center;
+      width: 150px;
+      height: 45px;
+      font-weight: 600;
+      line-height: 45px;
+      border-bottom: 2px solid rgb(39, 73, 112);
+      overflow: hidden;
+      vertical-align: middle;
+      color: rgb(39, 73, 112);
+    }
+    .menu-s .txt .meun-wrap.active .roulette-inner {
+      opacity: 1;
+    }
+    .menu-s .txt .meun-wrap .roulette-inner {
+      opacity: 0;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      transform: translate(0,0);
+      transition: all 0.05s;
+      left:0;
+      top:0;
+    }
+    .menu-s .txt .meun-wrap .roulette-inner p {
+      height: 45px;
+    }
+    .menu-s .txt .last-txt {
+      display: inline-block;
+      line-height: 45px;
+      vertical-align:middle;
+    }
+  </style>
+</head>
+<body class="menu-s">
+  <div class="wrap">
+    <p class="title">오늘의 점심 메뉴는?!</p>
+    <div class="menu-btn-wrap">
+      <button class="menu-btn">선택하기</button>
+    </div>
+    <div class="txt">
+      <div class="meun-wrap">
+        <div class="roulette-inner">
+        </div>
+      </div>
+      <p class="last-txt"> 은(는) 어떨까요?</p>
+    </div>
+
+  </div>
+  <script>
+    var menuArr = ['떡볶이','곰탕','초밥','햄버거','해장국','카레','돈까스','순두부','롤링파스타','짜장면','샌드위치','라면','피자','치킨','빵','냉면','김밥천국','생선구이','감자탕']
+
+    console.log(menuArr.length)
+    for(var j=0;j<3;j++) {
+      for(var i=0;i<menuArr.length;i++){
+        $('.menu-s .txt .meun-wrap .roulette-inner').append('<p>'+ menuArr[i] +'</p>');
+      }
+    }
+
+    var goMenu = -45;
+    
+    function selectMenuTT() {
+      var num = Math.floor(Math.random() * menuArr.length);
+      var wrapHeight = $('.menu-s .txt .meun-wrap .roulette-inner').outerHeight();
+      var menuHeight = $('.menu-s .txt .meun-wrap .roulette-inner p').outerHeight();
+      var spin = menuArr.length * 2 + num;
+
+      
+      
+      var speed = 50;
+      var speed2 = 50;
+      var i = spin;
+      console.log(num +'/'+ wrapHeight +'/'+spin +'/'+speed);
+
+
+      for(var e=0;e<spin;e++) { 
+        if (e > (spin - 11)) {
+          speed = speed + 50;
+          // console.log(speed +'s');
+          setTimeout(function() {
+            goMenu = goMenu + menuHeight;
+            speed2 = speed2 + 50;
+          
+            $('.menu-s .txt .meun-wrap .roulette-inner').css({'top':'-'+ goMenu +'px','transition': 'all 0.'+speed2+'s'});
+            console.log(speed2 +'b');
+          },speed);
+        } else {
+          setTimeout(function() {
+            goMenu = goMenu + menuHeight;
+          
+            $('.menu-s .txt .meun-wrap .roulette-inner').css({'top':'-'+ goMenu +'px','transition': 'all 0.05s'});
+          },50);
+        }
+      }
+
+      // var menuTime = setInterval(function(){
+      //   i = i - 1;
+      //   goMenu = goMenu + menuHeight;
+        
+        
+      //   $('.menu-s .txt .meun-wrap .roulette-inner').css({'top':'-'+ goMenu +'px','transition': 'all 0.05s'});
+      //   // console.log(i);
+      //   if ( i === 10 ) {
+      //     clearInterval(menuTime);
+      //     for(var e=0;e<9;e++){
+      //       var positionTop = (spin - 10) * 45
+      //       speed = speed + 50
+      //       // $(".menu-s .txt .meun-wrap .roulette-inner").animate({top: '250px'},speed);
+      //       console.log(positionTop);
+      //     }
+      //   }
+
+      // }, 50);
+
+    }
+
+    function selectMenu() {
+      var num = Math.floor(Math.random() * menuArr.length);
+
+      var wrapHeight = $('.menu-s .txt .meun-wrap .roulette-inner').outerHeight();
+      var menuHeight = $('.menu-s .txt .meun-wrap .roulette-inner p').outerHeight();
+
+      var spin = menuArr.length * 2 + num;
+      console.log(num +'/'+ wrapHeight +'/'+ (wrapHeight - menuHeight));
+
+
+      var i = spin;
+      var goMenu = -45;
+
+      var menuTime = setInterval(function(){ 
+          i = i - 1;
+          goMenu = goMenu + menuHeight;
+          console.log(goMenu);
+
+          $('.menu-s .txt .meun-wrap .roulette-inner').css({'top':'-'+ goMenu +'px','transition': 'all 0.05s'})
+          if (goMenu === wrapHeight - menuHeight) {
+            goMenu = -45;
+          }
+
+          if (goMenu === 0) {
+            $('.menu-s .txt .meun-wrap .roulette-inner').css({'top':'-'+ goMenu +'px','transition': 'none'})
+          }
+          if (i === 0) clearInterval(menuTime);
+       }, 50);
+
+    }
+
+    $('.menu-s .menu-btn').on('click', function() {
+      var ch = $('.menu-s .txt .meun-wrap').hasClass('active');
+      $(this).stop().animate({top:'-2px'},100).animate({top:'-10px'},100,function() {
+
+        if (ch === true) {
+          alert('이미 선택하셨습니다.');
+        } else {
+          $('.menu-s .txt .meun-wrap').addClass('active');
+          selectMenu()
+  
+        }
+      });
+    });
+  </script>
+</body>
+</html>

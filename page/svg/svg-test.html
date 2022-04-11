@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <script src="../../js/jquery-1.12.2.min.js"></script>
+  <script src="../../js/ScrollMagic.min.js"></script>
+
+  <script src="../../js/debug.addIndicators.min.js"></script>
+  <script src="../../js/TweenMax.min.js"></script>
+  <script src="../../js/animation.gsap.js"></script>
+  <style>
+    .icon-test {
+      padding-top: 1000px;
+    }
+    .icon-test .txt {padding-left: 18px;background: url('./test.svg') left center / 10px no-repeat;
+    font-size: 15px;}
+    #lar_1 path {fill: red;}
+    #imagg {
+      width: 110vw;
+      height: 110vh;
+      position: absolute;
+      top: -5vh;
+      left: -5vw;
+      object-fit: cover;
+      filter: url(#water);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="svg">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.97 40.95" width="150px" height="150px">
+        <g id="lar_1" data-name="lar 1">
+          <path id="e-run" style="stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1009.23px; stroke-dashoffset: 1009.23px;" fill="none" d="M13.5,6A5.5,5.5,0,1,1,8,11.5,5.51,5.51,0,0,1,13.5,6m0-1A6.5,6.5,0,1,0,20,11.5,6.5,6.5,0,0,0,13.5,5Z" transform="translate(-7 -5)"/>
+        </g>
+        <g id="lar_3" data-name="lar 3">
+          <path id="e-run-ssi" d="M25,13V23H15V13H25m1-1H14V24H26V12Z" transform="translate(-7 -5)"/>
+        </g>
+        <g id="lar_2" data-name="lar 2">
+          <path  d="M31.71,31.49l3.17,2.15.43.29.49-.19,3.57-1.39L38.3,36l-.14.5.33.41,2.42,3L37.09,40l-.53,0-.28.44L34.21,43.7l-1.3-3.6-.17-.49-.51-.14-3.7-1,3-2.34.41-.33,0-.52-.22-3.82m-1.11-2,.33,5.85L26.31,39,32,40.44,34,46,37.12,41,43,40.84l-3.71-4.53,1.63-5.63-5.45,2.13L30.6,29.52Z" transform="translate(-7 -5)"/>
+        </g>
+      </svg>
+    </div>
+    <div class="h" style="height: 1500px;"></div>
+    <div id="line"></div>
+    <div class="bam-wrap" style="padding-top: 200px;">
+      <svg width="150px" height="150px" id="bam_1" data-name="bam_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 34.9">
+        <defs><style>.cls-1{fill:#fff;stroke:#000;stroke-miterlimit:10;}</style></defs>
+        <path id="e-run-ssi-bar" class="cls-1" d="M27.92,9.58A75,75,0,0,0,15,21C11.87,24.69,9.5,28.71,9.5,32.5c0,11,20,10,20,10,7,0,19-3,19-10,0-3.92-6-11-11.2-16.43-4.12-4.28-7.8-7.57-7.8-7.57" transform="translate(-9 -8.13)"/>
+      </svg>
+    </div>
+    <div class="h" style="height: 1500px;"></div>
+    <div id="line2"></div>
+    <div class="bam-wrap" style="padding-top: 200px;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 36.28" width="300px" height="300px">
+        <defs><style>.cls-1{fill:none;stroke:#000;stroke-miterlimit:10;}</style></defs>
+        <g id="bam2_1" data-name="bam2 1">
+          <path id="e-run" d="M29.5,8.5s3.68,3.29,7.8,7.57c5.24,5.45,11.2,12.51,11.2,16.43,0,7-12,10-19,10,0,0-.47,0-1.27,0-4.41,0-18.73-.71-18.73-10C9.5,28.71,11.87,24.69,15,21A77.59,77.59,0,0,1,29.5,8.5m.1-1.26L29,7.66A77.62,77.62,0,0,0,14.22,20.39C10.42,24.84,8.5,28.92,8.5,32.5c0,10.23,15.1,11,19.73,11,.83,0,1.32,0,1.32,0h0c8,0,20-3.5,20-11,0-3.44-3.86-9.2-11.48-17.12-4.1-4.26-7.82-7.59-7.85-7.63l-.57-.51Z" transform="translate(-8.5 -7.24)"/>
+        </g>
+        <g id="bam2_2" data-name="bam2 2">
+          <path id="e-run-si" class="cls-1" d="M9.5,32.5s25,4.59,37-5.21" transform="translate(-8.5 -7.24)"/>
+        </g>
+        <g id="bam2_3" data-name="bam2 3">
+          <path id="e-run-si-bb" class="cls-1" d="M13.5,22.5s17.34,3.11,25.67-4.44" transform="translate(-8.5 -7.24)"/>
+        </g>
+      </svg>
+    </div>
+    <div class="icon-test">
+      <p class="txt">내 앞에 아이콘이 와요</p>
+    </div>
+    <svg width="0" height="0"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+     <filter id="water">
+       <feTurbulence type="fractalNoise" baseFrequency=".03 .03" numOctaves="1" result="noise1"></feTurbulence>
+       <feColorMatrix in="noise1" type="hueRotate" values="0" result="noise2">
+         <animate attributeName="values" from="0" to="360" dur="1s" repeatCount="indefinite"/>
+       </feColorMatrix>
+       <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="7" in="SourceGraphic" in2="noise2" />
+     </filter>
+   </svg>
+   
+   <img id="imagg" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/467/hawaii-water%20small.jpeg" alt="Hawaiian water crashes against the rocks">
+  </div>
+</body>
+<script>
+
+  
+
+
+  function pathPrepare ($el) {
+		var lineLength = $el[0].getTotalLength();
+		$el.css("stroke-dasharray", lineLength);
+		$el.css("stroke-dashoffset", lineLength);
+	}
+
+	var $bam = $("#e-run-ssi-bar");
+	var $bam2 = $("#e-run");
+	var $bam21 = $("#e-run-si");
+	var $bam22 = $("#e-run-si-bb");
+
+	// prepare SVG
+	pathPrepare($bam);
+	pathPrepare($bam2);
+	pathPrepare($bam21);
+	pathPrepare($bam22);
+
+	// init controller
+	var controller = new ScrollMagic.Controller();
+
+	// build tween
+  var tween = new TimelineMax()
+		.add(TweenMax.to($bam, 2, {strokeDashoffset: 0, ease:Linear.easeNone,stroke: "#33629c"}))  // draw dot for 0.1
+    // .add(TweenMax.to("path", 1, {stroke: "#33629c", ease:Linear.easeNone}), 0); change color during the whole thing
+    
+    var tween2 = new TimelineMax()
+		.add(TweenMax.to($bam2, 1, {strokeDashoffset: 0, ease:Linear.easeNone,stroke: "#824D19"}))  // draw dot for 0.1
+		.add(TweenMax.to($bam21, 0.5, {strokeDashoffset: 0, ease:Linear.easeNone,stroke: "#824D19"}))  // draw dot for 0.1
+		.add(TweenMax.to($bam22, 0.1, {strokeDashoffset: 0, ease:Linear.easeNone,stroke: "#824D19"}))  // draw dot for 0.1
+
+
+	// build scene
+	var scene = new ScrollMagic.Scene({triggerElement: "#line", duration: 300, tweenChanges: true,triggerHook: 0.5,})
+					.setTween(tween)
+					.addIndicators() // add indicators (requires plugin)
+          .addTo(controller);
+
+          
+var scene = new ScrollMagic.Scene({triggerElement: "#line2", duration: 300, tweenChanges: true,triggerHook: 0.5,})
+          .setTween(tween2)
+          .addIndicators() // add indicators (requires plugin)
+          .addTo(controller);
+          
+
+
+</script>
+</html>

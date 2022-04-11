@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- width=device-width, initial-scale=1.0, minimum-scale=1 -->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Document</title>
+  <script src="../../js/jquery-1.12.2.min.js"></script>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      color: #fff;
+    }
+    .static {
+      max-width: 980px;
+      height: 200px;
+      background-color: gold;
+    }
+    .uno {
+      max-width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+    .due {
+      max-width: 500px;
+      height: 100px;
+      background-color: blue;
+    }
+    .tre {
+      max-width: 1000px;
+      height: 100px;
+      background-color: black;
+    }
+    .set {
+      width: calc(100vw + 200px);
+      font-size: 0;
+    }
+    .set .lg {
+      display: inline-block;
+      width: 100vw;
+      height: 450px;
+      background-color: cadetblue;
+      font-size: 15px;
+    }
+    .set .sm {
+      display: inline-block;
+      width: 200px;
+      height: 400px;
+      background-color: coral;
+      font-size: 15px;
+    }
+    .hi {
+      width: 100px;
+      height: 100vh;
+      background-color: darkslateblue;
+    }
+  </style>
+</head>
+<body>
+  <div class="static">
+    <p>980px</p>
+  </div>
+  <div class="uno">
+    <p>100</p>
+  </div>
+  <div class="due">
+    <p>500</p>
+  </div>
+  <div class="tre">
+    <p>1000</p>
+  </div>
+  <div class="set">
+    <div class="lg">
+      <p>100vw</p>
+    </div>
+    <div class="sm">
+      <p>200</p>
+    </div>
+  </div>
+  <div class="hi">
+    <p>100vh</p>
+  </div>
+
+  <script>
+    widthText($('.static'));
+    widthText($('.uno'));
+    widthText($('.due'));
+    widthText($('.tre'));
+    widthText($('.lg'));
+    $(window).resize(function() {
+      widthText($('.static'));
+      widthText($('.uno'));
+      widthText($('.due'));
+      widthText($('.tre'));
+      widthText($('.lg'));
+    });
+    function widthText($this) {
+      var thisWidth = $this.innerWidth();
+    
+      $this.children('p').text(thisWidth);
+    }
+    
+    
+    var thisHeight = $('.hi').innerHeight();
+    
+    $('.hi').children('p').text(thisHeight);
+  
+  </script>
+</body>
+</html>

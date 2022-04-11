@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Document</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <script src="../../js/jquery-1.12.2.min.js"></script>
+  <script src="../../js/ScrollMagic.min.js"></script>
+  <script src="../../js/debug.addIndicators.min.js"></script>
+  <script src="../../js/TweenMax.min.js"></script>
+  <script src="../../js/animation.gsap.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"></script>
+  <!-- <script src="./smil.user.js"></script> -->
+</head>
+<body class="svg-filter">
+  <svg style="display: none;" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <script type="text/ecmascript" xlink:href="smil.user.js"/>
+    <script type="text/ecmascript" xlink:href="smil.check.js"/>
+  <defs>
+    <filter id="goo0">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="blur" x="0"></feGaussianBlur>
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo"></feColorMatrix>
+      <feComposite in="SourceGraphic" in2="goo"></feComposite>
+    </filter>
+
+    <filter id="goo">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="blur" x="0"></feGaussianBlur>
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -7" result="goo"></feColorMatrix>
+      <feComposite in="SourceGraphic" in2="goo"></feComposite>
+    </filter>
+    <filter id="water">
+      <feTurbulence type="fractalNoise" baseFrequency=".08 .08" numOctaves="1" result="noise1"></feTurbulence>
+      <feColorMatrix in="noise1" type="hueRotate" values="0" result="noise2">
+        <animate attributeName="values" from="0" to="360" dur="2s" repeatCount="indefinite"/>
+      </feColorMatrix>
+      <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="15" in="SourceGraphic" in2="noise2" />
+    </filter>
+    <filter id="blur">
+        <feGaussianBlur stdDeviation="2" />
+    </filter>
+    <filter id="blu22r">
+        <feGaussianBlur stdDeviation="15" />
+    </filter>
+  </defs>
+</svg>
+  <div class="wrap">
+    <h1>SVG filter test</h1>
+    <!-- 테스트 -->
+    <div class="text-wrap">
+      <p class="txt">01. 동일 div안에 있는 요소</p>
+      <div class="content content01" filter="url(#goo)">
+        <div class="box box1" filter="url(#goo)"></div>
+        <span class="box box2" filter="url(#goo)"></span>
+        <p class="box box3" filter="url(#goo)"></p>
+        <div class="box box4" filter="url(#goo)"></div>
+        <span class="box box5" filter="url(#goo)"></span>
+        <p class="box box6" filter="url(#goo)"></p>
+      </div>
+    </div>
+    <script>
+      $('.content01 .box').on('mousedown', function() {
+        $(this).on('mousemove', function() {
+        });
+      })
+      $('.content01 .box').each(function(i) {
+
+        var size = Math.floor(Math.random() * 180) + 'px';
+        var position_l = Math.floor(Math.random() * 100) + '%';
+        var position_t = Math.floor(Math.random() * 100) + '%';
+
+        $('.content01 .box:eq('+i+')').css({'position':'absolute','left':position_l,'top':position_t,'width':size,'height':size});
+      });
+    </script>
+    <!-- 테스트 -->
+    <div class="text-wrap">
+      <p class="txt">02. svg line animation</p>
+      <div class="content content02">
+        <iframe id="star-frame" src="./starb.svg"></iframe>
+      </div>
+    </div>
+    <script>
+
+      $('#star-frame').load(function() {
+
+        var $line = $('#star-frame').contents().find('.st0');
+
+        $line.animate({'strokeDashoffset': 0},3000);
+      });
+    </script>
+    <!-- 테스트 -->
+    <div class="text-wrap">
+      <p class="txt">03. 클릭하면 나오는 메뉴</p>
+      <div class="content content03">
+        <div class="menu-wrap">
+          <a href="#" class="open-menu"><span>메뉴열기</span></a>
+          <div class="meun">
+            <a href="#" class="f">페이스북</a>
+            <a href="#" class="i">인스타그램</a>
+            <a href="#" class="b">블로그</a>
+            <a href="#" class="t">트위터</a>
+            <a href="#" class="y">유튜브</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      $('.open-menu').on('click', function(e) {
+        e.preventDefault();
+        $(this).toggleClass('active');
+        $('.meun').toggleClass('is-show');
+      });
+    </script>
+    <!-- 테스트 -->
+    <div class="text-wrap">
+      <p class="txt">04. path모양에 따른 텍스트 렌더링</p>
+      <div class="content content04">
+        <svg id="text-container" viewBox="0 0 1000 200" xmlns="http://www.w3.org/2000/svg">
+          <path id="text-curve" d="M0 100s269.931 86.612 520 0c250.069-86.612 480 0 480 0" fill="none"/>
+
+          <text y="40" font-size="32">
+            <textPath id="text-path" href="#text-curve" startOffset="200">
+              1234567890123456789012345678901234567890
+            </textPath>
+          </text>
+        </svg>
+      </div>
+    </div>
+    <!-- 테스트 -->
+    <div class="text-wrap">
+      <p class="txt">05. 로딩 애니메이션</p>
+      <div class="content content05">
+        <div class="content-wrap">
+          <div class="round-wrap">
+            <span class="round"></span>
+            <span class="round"></span>
+            <span class="round"></span>
+            <span class="round"></span>
+            <span class="round"></span>
+            <span class="round"></span>
+            <span class="round"></span>
+            <span class="round"></span>
+            <span class="move-round"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 테스트 -->
+    <div class="text-wrap">
+      <p class="txt">06. 워터 효과 (배경 X)</p>
+      <div class="content content06 chrome">
+        <img src="./img/img1.jpg" alt="">
+        <div class="filter-wrap">
+          <img src="./img/img1.jpg" alt="">
+        </div>
+        <button class="btn"><span class="ori">원본보기</span> <span class="hid">필터보기</span></button>
+      </div>
+    </div>
+    <script>
+      $('.content06.chrome .btn').on('click', function() {
+        $('.content06.chrome .filter-wrap').toggleClass('hide');
+        $(this).toggleClass('hide');
+      })
+    </script>
+    <!-- 테스트 -->
+    <div class="text-wrap">
+      <p class="txt">07. 스크롤 따라가는 라인</p>
+      <div class="content content07">
+        <div class="line-wrap">
+          <iframe id="line-frame" src="./line.svg"></iframe>
+        </div>
+      </div>
+    </div>
+    <script>
+      $('#line-frame').load(function() {  //iframe 로드 후 실행
+        function pathPrepare ($select) {
+          var lineLength = $select[0].getTotalLength();
+          $select.css("stroke-dasharray", lineLength);
+          $select.css("stroke-dashoffset", lineLength);
+        }
+
+        var $line = $('#line-frame').contents().find('#line-scroll');
+
+        // prepare SVG
+        pathPrepare($line);
+
+        var controller = new ScrollMagic.Controller({container: ".line-wrap"});
+        // build tween
+        var tween = new TimelineMax()
+          .add(TweenMax.to($line, 2, {strokeDashoffset: 0, ease:Linear.easeNone}))		// change color during the whole thing
+
+        // build scene
+        var scene = new ScrollMagic.Scene({triggerElement: "#line-frame",triggerHook: 0, duration: 930, tweenChanges: true})
+          .setTween(tween)
+          // .addIndicators() // add indicators (requires plugin)
+          .addTo(controller)
+      });
+    </script>
+    <!-- 테스트 -->
+    <div class="text-wrap">
+      <p class="txt">08. 위아래로 튕기는 버튼</p>
+      <div class="content content08">
+        <a class="move-btn-wrap" href="#">
+          <svg id="move-btn" width="300" height="266" viewBox="0 0 300 266" xmlns="http://www.w3.org/2000/svg">
+            <script xmlns="http://www.w3.org/2000/svg" type="text/ecmascript" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.codedread.com/lib/smil.user.js"/>
+            <path fill="#5673b1" d="M300,206V56c0,0-27.83,0-60,0c-34.9,0-48,0-90,0s-55.1,0-90,0c-32.17,0-60,0-60,0v150v4c0,0,27.83,0,60,0 c34.9,0,48,0,90,0s55.1,0,90,0c32.17,0,60,0,60,0V206z">
+            </path>
+          </svg>
+          <span class="txt">CLICK ME!</span>
+        </a>
+      </div>
+    </div>
+    <script>
+      $('.move-btn-wrap').on('mouseenter', function() {
+        $(this).addClass('start-btn');
+        $(this).removeClass('end-btn');
+      });
+      $('.move-btn-wrap').on('click', function(e) {
+        e.preventDefault();
+        $(this).addClass('move-btn');
+      });
+      $('.move-btn-wrap').on('mouseleave', function() {
+
+        var ch = $(this).hasClass('move-btn');
+        if (ch === false) $(this).addClass('end-btn');
+
+        $(this).removeClass('start-btn');
+        $(this).removeClass('move-btn');
+      });
+    </script>
+    <!-- 테스트 -->
+    <div class="text-wrap">
+      <p class="txt">09. ie 테스트</p>
+      <div class="content">
+        <div class="content content06 ie">
+          <img src="./img/img1.jpg" alt="">
+          <div class="filter-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <!-- <defs>
+              <filter id="water">
+                <feTurbulence type="fractalNoise" baseFrequency=".08 .08" numOctaves="1" result="noise1"></feTurbulence>
+                <feColorMatrix in="noise1" type="hueRotate" values="0" result="noise2">
+                  <animate attributeName="values" from="0" to="360" dur="2s" repeatCount="indefinite"/>
+                </feColorMatrix>
+                <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="15" in="SourceGraphic" in2="noise2" />
+              </filter>
+            </defs> -->
+            <image x="-185" y="-150" xlink:href="./img/img1.jpg" filter="url(#water)" width="512" height="288"/>
+          </svg>
+          </div>
+          <button class="btn"><span class="ori">원본보기</span> <span class="hid">필터보기</span></button>
+        </div>
+      </div>
+    </div>
+    <script>
+      $('.content06.ie .btn').on('click', function() {
+        $('.content06.ie .filter-wrap').toggleClass('hide');
+        $(this).toggleClass('hide');
+      })
+    </script>
+    <!--  테스트 -->
+    <div class="text-wrap">
+      <p class="txt">10. clip-path 테스트</p>
+      <div class="content content09">
+        <div class="content-wrap">
+          <div class="round-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="230px" height="230px" viewBox="0 0 230 230" id="mol">
+                <defs>
+                  <mask id="svgmask1" x="0" y="0" width="230" height="230">
+                    <circle id="svgmask2" class="move-round" cx="115" cy="20" r="20" transform="rotate(0)" fill="#00fff3"/>
+                    <animateTransform xlink:href="#svgmask2" attributeName="transform" attributeType="XML" type="rotate" from="0 115 115" to="360 115 115" dur="5s" begin="0s" repeatCount="indefinite" fill="freeze" />
+                  </mask>
+                </defs>
+                <g mask="url(#svgmask1)">
+                  <circle cx="115" cy="20" r="20" fill="#00fff3"/>
+                  <circle cx="190" cy="48" r="20" fill="#00fff3"/>
+                  <circle cx="210" cy="115" r="20" fill="#00fff3"/>
+                  <circle cx="190" cy="185" r="20" fill="#00fff3"/>
+                  <circle cx="115" cy="210" r="20" fill="#00fff3"/>
+                  <circle cx="47" cy="185" r="20" fill="#00fff3"/>
+                  <circle cx="20" cy="115" r="20" fill="#00fff3"/>
+                  <circle cx="47" cy="47" r="20" fill="#00fff3"/>
+                </g>
+              </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+    </script>
+    <!-- 테스트 -->
+    <div class="text-wrap">
+      <p class="txt">11. svg color변환</p>
+      <div class="content sts01">
+        <div class="btn">
+          <button class="color-btn st01">1</button>
+          <button class="color-btn st02">2</button>
+          <button class="color-btn st03">3</button>
+          <button class="color-btn st04">4</button>
+          <button class="color-btn st05">5</button>
+          <button class="color-btn st06">6</button>
+        </div>
+        <svg version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 400" style="enable-background:new 0 0 500 400;" xml:space="preserve">
+          <g>
+            <polygon class="st0 st01" points="219.5,172.6 187.1,174.7 169,147.6 183.5,118.4 215.9,116.3 234,143.4 	"/>
+          </g>
+          <g>
+            <polygon class="st0 st02" points="273.5,199.6 241.1,201.7 223,174.6 237.5,145.4 269.9,143.3 288,170.4 	"/>
+          </g>
+          <g>
+            <polygon class="st0 st03" points="167.5,204.6 135.1,206.7 117,179.6 131.5,150.4 163.9,148.3 182,175.4 	"/>
+          </g>
+          <g>
+            <polygon class="st0 st04" points="221.5,233.6 189.1,235.7 171,208.6 185.5,179.4 217.9,177.3 236,204.4 	"/>
+          </g>
+          <g>
+            <polygon class="st0 st05" points="277.5,261.6 245.1,263.7 227,236.6 241.5,207.4 273.9,205.3 292,232.4 	"/>
+          </g>
+          <g>
+            <polygon class="st0 st06" points="324.5,167.6 292.1,169.7 274,142.6 288.5,113.4 320.9,111.3 339,138.4 	"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <script>
+      $('.color-btn').on('click', function() {
+        var index = $(this).index();
+        console.log(index + 1)
+        $('.color-btn,.st0').removeClass('st-selec');
+        $('.st0'+(index + 1)+'').addClass('st-selec');
+      });
+    </script>
+    <!--  테스트 -->
+    <div class="text-wrap">
+      <p class="txt">01. clip-path 테스트</p>
+      <div class="content">
+      </div>
+    </div>
+    <style>
+      .move.is-start {
+        
+        animation: round 4.5s linear none;
+      }
+      
+      @keyframes round { 0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); } }
+    </style>
+    <!--  테스트 -->
+    <div class="text-wrap">
+      <p class="txt">01. clip-path 테스트</p>
+      <div class="content">
+        <div class="round-test" style="background-color:#000; position: relative; height: 100%;">
+          <iframe id="circle-svg" src="./cc.svg" style="width:400px;height:400px; transform: rotate(-90deg);position: absolute;left: calc(50% - 200px);top: calc(50% - 200px);border: none;"></iframe>
+          <!-- <svg id="circle-svg" width="500" height="500">
+            <circle id="cir" cx="250" cy="250" r="200" stroke="#fff" stroke-width="2"  style="stroke-dasharray: 1256.13, 1256.13; stroke-dashoffset: 0px;"/>
+          </svg> -->
+          <div class="move" style="position: absolute;left: calc(50% - 5px);top: 79px;
+        width: 10px;transform-origin: center 155px;
+        height: 10px;
+        border-radius: 100px; background-color: #fff;"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      $('#circle-svg').load(function() {
+
+        var $pathes = $('#circle-svg').contents().find('#cir');
+
+        //console.log("getTotalLength",$pathes.getTotalLength());
+        let r = 200; //circle's radius
+        console.log("2*Math.PI*r",2*Math.PI*r)
+
+              // 1번 부분
+        //var total_length = $pathes[0].getTotalLength();
+
+        $pathes.css("stroke-dasharray", 2*Math.PI*r);
+        $pathes.css("stroke-dashoffset", 2*Math.PI*r);
+
+        $('.move').css({'animation':'round 4.5s linear none'});
+        // 4번 부분
+        $pathes.animate({
+            "stroke-dashoffset" : 0
+        }, 6000,'linear');
+
+        // <animateMotion 
+        //    xlink:href=".move"
+        //    dur="5s"
+        //    begin="0s"
+        //    fill="freeze"
+        //    repeatCount="indefinite"
+        //    rotate="auto-reverse"
+        //      >
+        //   <mpath xlink:href="$pathes" />
+        // </animateMotion>
+      });
+    
+    
+    
+    
+      // var animation1 = bodymovin.loadAnimation({
+      //   container: document.getElementById('lottie'),
+      //   renderer: 'svg',
+      //   loop: true,
+      //   autoplay: true,
+      //   path: 'loading.json'
+      // });
+      // lottie.loadAnimation({
+      //   container: element, // the dom element that will contain the animation
+      //   renderer: 'svg',
+      //   loop: true,
+      //   autoplay: true,
+      //   path: 'data.json' // the path to the animation json
+      // });
+    </script>
+    <!--  테스트 -->
+    <div class="text-wrap">
+      <p class="txt">01. clip-path 테스트</p>
+      <div class="content">
+      </div>
+    </div>
+    <!--  테스트 -->
+    <div class="text-wrap">
+      <p class="txt">01. clip-path 테스트</p>
+      <div class="content">
+      </div>
+    </div>
+    <!--  테스트 -->
+    <div class="text-wrap">
+      <p class="txt">01. clip-path 테스트</p>
+      <div class="content">
+      </div>
+    </div>
+    <!--  테스트 -->
+    <div class="text-wrap">
+      <p class="txt">01. clip-path 테스트</p>
+      <div class="content">
+      </div>
+    </div>
+    <!--  테스트 -->
+    <div class="text-wrap">
+      <p class="txt">01. clip-path 테스트</p>
+      <div class="content">
+      </div>
+    </div>
+    <!--  테스트 -->
+    <div class="text-wrap">
+      <p class="txt">01. clip-path 테스트</p>
+      <div class="content">
+      </div>
+    </div>
+    <!--  테스트 -->
+    <div class="text-wrap">
+      <p class="txt">01. clip-path 테스트</p>
+      <div class="content">
+      </div>
+    </div>
+    <!--  테스트 -->
+    <div class="text-wrap">
+      <p class="txt">01. clip-path 테스트</p>
+      <div class="content">
+      </div>
+    </div>
+    <!--  테스트 -->
+    <div class="text-wrap">
+      <p class="txt">01. clip-path 테스트</p>
+      <div class="content">
+      </div>
+    </div>
+  </div>
+</body>
+</html>
