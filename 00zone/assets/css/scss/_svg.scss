@@ -1,0 +1,608 @@
+@charset 'utf-8';
+.svg-filter {
+  .wrap {
+    font-size: 0;
+    width: 1200px;
+    margin: 0 auto;
+    h1 {
+      padding: 100px 0 120px;
+      font-size: 40px;
+      text-align: center;
+    }
+    .text-wrap {
+      display: inline-block;
+      width: 600px;
+      height: 550px;
+      box-sizing: border-box;
+      .txt {
+        font-size: 18px;
+        font-weight: 500;
+        padding: 20px;
+      }
+      .content {
+        width: 560px;
+        height: 470px;
+        margin: 0 auto;
+        border: 1px solid rgba(0,0,0,0.05);
+        overflow: hidden;
+        box-sizing: border-box;
+        &.content01 {
+          position: relative;
+          // filter: url('#goo0');
+          .box {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background-color: rgb(205, 68, 50);
+          }
+        }
+        // svg line animation
+        &.content02 {
+          #star-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+            transition:all 8s
+          }
+        }
+        // 클릭 시 나오는 메뉴
+        &.content03 {
+          position: relative;
+          // background-color: #518992;
+          filter: url('#goo');
+          .menu-wrap {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 70px;
+            height: 70px;
+            transform: translate(-50%,-50%);
+            .open-menu {
+              position: relative;
+              z-index: 5;
+              display: block;
+              width: 70px;
+              height: 70px;
+              padding-top: 20px;
+              border-radius: 100px;
+              background-color: #518992;
+              box-sizing: border-box;
+              span {
+                display: block;
+                width: 30px;
+                height: 3px;
+                margin: 10px auto;
+                background-color: #fff;
+              }
+              &:after,&:before {
+                content: '';
+                display: block;
+                width: 30px;
+                height: 3px;
+                margin: 0 auto;
+                background-color: #fff;
+              }
+              &.active {
+                animation: showMenu 0.8s 0.1s;
+                span {
+                  opacity: 0;
+                }
+                &:after {
+                  position: absolute;
+                  top: 34px;
+                  left: calc(50% - 14px);
+                  transform: rotate(-45deg);
+                  -ms-transform: rotate(-45deg);
+                  -moz-transform: rotate(-45deg);
+                  -webkit-transform: rotate(-45deg);
+                }
+                &:before {
+                  position: absolute;
+                  top: 34px;
+                  left: calc(50% - 14px);
+                  transform: rotate(45deg);
+                  -ms-transform: rotate(45deg);
+                  -moz-transform: rotate(45deg);
+                  -webkit-transform: rotate(45deg);
+                }
+              }
+            }
+            .meun {
+              a {
+                display: inline-block;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: 60px;
+                height: 60px;
+                border-radius: 100px;
+                transform: translate(-50%,-50%);
+                background: #518992 url('../page/svg/sns/footer-social-facebook_lg.png') center / auto no-repeat;
+                &.f {
+                  transition: all 0.8s;
+                }
+                &.i {
+                  background-image: url('../page/svg/sns/footer-social-instagram_lg.png');
+                  transition: all 0.8s 0.1s;
+                }
+                &.b {
+                  background-image: url('../page/svg/sns/footer-social-blog_lg.png');
+                  transition: all 0.8s 0.2s;
+                }
+                &.t {
+                  background-image: url('../page/svg/sns/footer-social-twitter_lg.png');
+                  transition: all 0.8s 0.3s;
+                }
+                &.y {
+                  background-image: url('../page/svg/sns/footer-social-youtube_lg.png');
+                  transition: all 0.8s 0.4s;
+                }
+              }
+              &.is-show {
+                a {
+                  left: 50%;
+                  top: -35px;
+                  background-color: #518992;
+                  &.i {
+                    top: 8px;
+                    left: 96px;
+                  }
+                  &.b {
+                    top: 86px;
+                    left: 76px;
+                  }
+                  &.t {
+                    top: 90px;
+                    left: -4px;
+                  }
+                  &.y {
+                    top: 8px;
+                    left: -26px;
+                  }
+                }
+              }
+            }
+          }
+        }
+        // 로딩 애니메이션
+        &.content05 {
+          position: relative;
+          background-color: #132541;
+          .content-wrap {
+            height: 100%;
+            filter: url('#goo');
+            .round-wrap {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              width: 230px;
+              height: 230px;
+              transform: translate(-50%,-50%);
+              .round {
+                position: absolute;
+                left: calc(50% - 15px);
+                top: 0;
+                width: 30px;
+                height: 30px;
+                border-radius: 100px;
+                background-color: #2e4973;
+                filter: blur(2px);
+                // -webkit-filter: blur(2px);
+                // -moz-filter: blur(2px);
+                // -o-filter: blur(2px);
+                // -ms-filter: blur(2px);
+                // filter: url(#blur);
+                // filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='2');
+                transform: scale(1.3);
+                &:nth-of-type(2) {
+                  left: 170px;
+                  top: 28px;
+                }
+                &:nth-of-type(3) {
+                  left: 200px;
+                  top: calc(50% - 15px);
+                }
+                &:nth-of-type(4) {
+                  left: 170px;
+                  top: 170px;
+                }
+                &:nth-of-type(5) {
+                  left: calc(50% - 15px);
+                  top: 200px;
+                }
+                &:nth-of-type(6) {
+                  left: 27px;
+                  top: 173px;
+                }
+                &:nth-of-type(7) {
+                  left: 0;
+                  top: calc(50% - 15px);
+                }
+                &:nth-of-type(8) {
+                  left: 27px;
+                  top: 27px;
+                }
+              }
+              .move-round {
+                position: absolute;
+                left: calc(50% - 20px);
+                top: -5px;
+                z-index: 5;
+                width: 33px;
+                height: 33px;
+                border-radius: 100px;
+                filter: blur(15px);
+                -webkit-filter: blur(15px);
+                -moz-filter: blur(15px);
+                -o-filter: blur(15px);
+                -ms-filter: blur(15px);
+                filter: url(#blu22r);
+                // filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='15');
+                background-color: #00fff3;
+                transform-origin: center 115px;
+                animation: round 5s infinite ;
+                box-shadow: 0px 0px 40px #00fff3;
+                transform: scale(1.6);
+              }
+            }
+          }
+        }
+        // 워터 효과
+        &.content06 {
+          position: relative;
+          img {
+            position: absolute;
+            left: 0;
+            top: 0;
+          }
+          .filter-wrap {
+            width: 125px;
+            height: 125px;
+            border-radius: 1000px;
+            margin: 145px 180px;
+            overflow: hidden;
+            filter: url('#water');
+            -webkit-filter: filter('#water');
+            -moz-filter: filter('#water');
+            -o-filter: filter('#water');
+            -o-filter: filter('#water');
+            transition: all 1s;
+            position: relative;
+            z-index: 10;
+            img {
+              position: absolute;
+              left: -180px;
+              top: -145px;
+            }
+            &.hide {
+              opacity: 0;
+            }
+          }
+          .btn {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            font-size: 15px;
+            .ori {
+              display: inline;
+            }
+            .hid {
+              display: none;
+            }
+            &.hide {
+              .ori {
+                display: none;
+              }
+              .hid {
+                display: inline;
+              }
+            }
+          }
+        }
+        // 스크롤 따라가는 라인
+        &.content07 {
+          .line-wrap {
+            height: 470px;
+            overflow-y: scroll;
+            #line-frame {
+              width: 100%;
+              height: 1500px;
+              border: none;
+            }
+          }
+        }
+        // 위아래로 튕기는 버튼
+        &.content08 {
+          .move-btn-wrap {
+            display: block;
+            position: relative;
+            width: 300px;
+            height: 266px;
+            margin: 102px 130px;
+            .txt {
+              padding: 0;
+              width: 158.41px;
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%, -50%);
+              font-size: 30px;font-weight: 600;
+              color: #fff;
+            }
+            #move-btn {
+              path {
+                cursor: pointer;
+                transition: all 1s;
+              }
+            }
+            &.start-btn {
+              #move-btn {
+                path {
+                  animation: changeColor 8s linear,startBtn 1s forwards;
+                }
+              }
+              .txt {
+                animation: startText 1s forwards;
+              }
+            }
+            &.move-btn {
+              #move-btn {
+                path {
+                  animation: changeColor 8s linear,moveBtn 0.8s linear;
+                }
+              }
+              .txt {
+                animation: moveText 0.8s forwards;
+              }
+            }
+            &.end-btn {
+              #move-btn {
+                path {
+                  animation: endBtn 1s forwards;
+                }
+              }
+              .txt {
+                animation: endText 1s forwards;
+              }
+            }
+          }
+        }
+        // 로딩 애니메이션 마스크
+        &.content09 {
+          position: relative;
+          background-color: #132541;
+          .content-wrap {
+            height: 100%;
+            #svgmask1 {
+              position: absolute;
+              left: 0;
+              top: 0;
+            }
+            .round-wrap {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              width: 230px;
+              height: 230px;
+              transform: translate(-50%,-50%);
+              .move-round {
+                background-color: #00fff3;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//svg color 테스트
+.st0 {
+  fill:#B9D6FF;
+  transition: all 0.3s;
+}
+.color-btn {
+  margin:0 5px;width: 10px;height: 10px;background-color: #888;
+  transition: all 0.3s;
+}
+.st-selec {background-color: #000 ; fill: #0098D0;}
+
+
+@keyframes showMenu {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes round {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// 위아래로 튕기는 버튼 (SVG)
+@keyframes changeColor {
+  0% {
+    fill:#3e5ea1;
+  }
+  13% {
+    fill:#f8534a;
+  }
+  25% {
+    fill:#ffba3b;
+  }
+  38% {
+    fill:#78e737;
+  }
+  50% {
+    fill:#2ae4cb;
+  }
+  63% {
+    fill:#3f66e9;
+  }
+  75% {
+    fill:#783cf0;
+  }
+  100% {
+    fill:#f743f4;
+  }
+}
+
+// 위아래로 튕기는 버튼 (SVG)
+@keyframes startBtn {
+  0% {
+    d: path(
+      "M300,206V56c0,0-27.83,0-60,0c-34.9,0-48,0-90,0s-55.1,0-90,0c-32.17,0-60,0-60,0v150v4c0,0,27.83,0,60,0 c34.9,0,48,0,90,0s55.1,0,90,0c32.17,0,60,0,60,0V206z"
+      );
+    }
+    100% {
+      d: path(
+        "M300,206V56c0,0-27.83,0-60,0c-34.9,0-48-56-90-56S94.9,56,60,56c-32.17,0-60,0-60,0v150v4c0,0,27.83,0,60,0 c34.9,0,48,56,90,56s55.1-56,90-56c32.17,0,60,0,60,0V206z"
+      );
+  }
+}
+@keyframes endBtn {
+  0% {
+    d: path(
+      "M300,206V56c0,0-27.83,0-60,0c-34.9,0-48-56-90-56S94.9,56,60,56c-32.17,0-60,0-60,0v150v4c0,0,27.83,0,60,0 c34.9,0,48,56,90,56s55.1-56,90-56c32.17,0,60,0,60,0V206z"
+      );
+    }
+    100% {
+      d: path(
+        "M300,206V56c0,0-27.83,0-60,0c-34.9,0-48,0-90,0s-55.1,0-90,0c-32.17,0-60,0-60,0v150v4c0,0,27.83,0,60,0 c34.9,0,48,0,90,0s55.1,0,90,0c32.17,0,60,0,60,0V206z"
+      );
+  }
+}
+@keyframes moveBtn {
+  0% {
+    d: path(
+      "M300,206V56c0,0-27.83,0-60,0c-34.9,0-48-56-90-56S94.9,56,60,56c-32.17,0-60,0-60,0v150v4c0,0,27.83,0,60,0 c34.9,0,48,56,90,56s55.1-56,90-56c32.17,0,60,0,60,0V206z"
+    );
+  }
+  20% {
+      d: path(
+          "M300,206V56c0,0-27.83,0-60,0c-34.9,0-48,13-90,13S94.9,56,60,56c-32.17,0-60,0-60,0v150v4c0,0,27.83,0,60,0 c34.9,0,48-13,90-13s55.1,13,90,13c32.17,0,60,0,60,0V206z"
+      );
+  }
+  35% {
+      d: path(
+          "M300,206V56c0,0-27.83,0-60,0c-34.9,0-48-37-90-37S94.9,56,60,56c-32.17,0-60,0-60,0v150v4c0,0,27.83,0,60,0 c34.9,0,48,37,90,37s55.1-37,90-37c32.17,0,60,0,60,0V206z"
+      );
+  }
+  50% {
+      d: path(
+          "M300,206V56c0,0-27.83,0-60,0c-34.9,0-48,8-90,8s-55.1-8-90-8c-32.17,0-60,0-60,0v150v4c0,0,27.83,0,60,0 c34.9,0,48-8,90-8s55.1,8,90,8c32.17,0,60,0,60,0V206z"
+      );
+  }
+  60% {
+      d: path(
+          "M300,206V56c0,0-27.83,0-60,0c-34.9,0-48-27-90-27S94.9,56,60,56c-32.17,0-60,0-60,0v150v4c0,0,27.83,0,60,0 c34.9,0,48,27,90,27s55.1-27,90-27c32.17,0,60,0,60,0V206z"
+      );
+  }
+  70% {
+      d: path(
+          "M300,206V56c0,0-27.83,0-60,0c-34.9,0-48,4-90,4s-55.1-4-90-4c-32.17,0-60,0-60,0v150v4c0,0,27.83,0,60,0 c34.9,0,48-4,90-4s55.1,4,90,4c32.17,0,60,0,60,0V206z"
+      );
+  }
+  80% {
+      d: path(
+          "M300,206V56c0,0-27.83,0-60,0c-34.9,0-48-17-90-17S94.9,56,60,56c-32.17,0-60,0-60,0v150v4c0,0,27.83,0,60,0 c34.9,0,48,17,90,17s55.1-17,90-17c32.17,0,60,0,60,0V206z"
+      );
+  }
+  85% {
+      d: path(
+          "M300,206V56c0,0-27.83,0-60,0c-34.9,0-48,1-90,1s-55.1-1-90-1c-32.17,0-60,0-60,0v150v4c0,0,27.83,0,60,0 c34.9,0,48-1,90-1s55.1,1,90,1c32.17,0,60,0,60,0V206z"
+      );
+  }
+  88% {
+      d: path(
+          "M300,206V56c0,0-27.83,0-60,0c-34.9,0-48-7-90-7s-55.1,7-90,7c-32.17,0-60,0-60,0v150v4c0,0,27.83,0,60,0 c34.9,0,48,7,90,7s55.1-7,90-7c32.17,0,60,0,60,0V206z"
+      );
+  }
+  91% {
+      d: path(
+          "M300,206V56c0,0-27.83,0-60,0c-34.9,0-48-17-90-17S94.9,56,60,56c-32.17,0-60,0-60,0v150v4c0,0,27.83,0,60,0 c34.9,0,48,17,90,17s55.1-17,90-17c32.17,0,60,0,60,0V206z"
+      );
+  }
+  94% {
+      d: path(
+          "M300,206V56c0,0-27.83,0-60,0c-34.9,0-48,1-90,1s-55.1-1-90-1c-32.17,0-60,0-60,0v150v4c0,0,27.83,0,60,0 c34.9,0,48-1,90-1s55.1,1,90,1c32.17,0,60,0,60,0V206z"
+      );
+  }
+  97% {
+      d: path(
+          "M300,206V56c0,0-27.83,0-60,0c-34.9,0-48-7-90-7s-55.1,7-90,7c-32.17,0-60,0-60,0v150v4c0,0,27.83,0,60,0 c34.9,0,48,7,90,7s55.1-7,90-7c32.17,0,60,0,60,0V206z"
+      );
+  }
+  100% {
+      d: path(
+          "M300,206V56c0,0-27.83,0-60,0c-34.9,0-48,0-90,0s-55.1,0-90,0c-32.17,0-60,0-60,0v150v4c0,0,27.83,0,60,0 c34.9,0,48,0,90,0s55.1,0,90,0c32.17,0,60,0,60,0V206z"
+      );
+  }
+}
+// 위아래로 튕기는 버튼 (TEXT)
+@keyframes startText {
+  0% {
+    transform: translate(-50%, -50%) scaleY(1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scaleY(1.5);
+  }
+}
+@keyframes endText {
+  0% {
+    transform: translate(-50%, -50%) scaleY(1.5);
+    }
+    100% {
+      transform: translate(-50%, -50%) scaleY(1);
+  }
+}
+@keyframes moveText {
+  0% {
+    transform: translate(-50%, -50%) scaleY(1.5);
+  }
+  20% {
+    transform: translate(-50%, -50%) scaleY(0.8);
+  }
+  35% {
+    transform: translate(-50%, -50%) scaleY(1.3);
+  }
+  50% {
+    transform: translate(-50%, -50%) scaleY(0.85);
+  }
+  60% {
+    transform: translate(-50%, -50%) scaleY(1.2);
+  }
+  70% {
+    transform: translate(-50%, -50%) scaleY(0.9);
+  }
+  80% {
+    transform: translate(-50%, -50%) scaleY(1.1);
+  }
+  85% {
+    transform: translate(-50%, -50%) scaleY(0.95);
+  }
+  88% {
+    transform: translate(-50%, -50%) scaleY(1.1);
+  }
+  91% {
+    transform: translate(-50%, -50%) scaleY(0.95);
+  }
+  94% {
+    transform: translate(-50%, -50%) scaleY(1.1);
+  }
+  97% {
+    transform: translate(-50%, -50%) scaleY(0.95);
+  }
+  100% {
+    transform: translate(-50%, -50%) scaleY(1);
+  }
+}

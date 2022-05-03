@@ -1,0 +1,237 @@
+@charset 'utf-8';
+body.page-coupang {
+  min-width: 1000px;
+  // top-banner
+  & .top-banner {
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    background-color: #aef2ff;
+    font-size: 0;
+    a {
+      display: inline-block;
+      text-align: center;
+    }
+  }
+  // 슬라이더 컨텐츠
+  & .inner {
+    background-color: rgb(241, 241, 241);
+    & .slider-wrap {
+      max-width: 2560px;
+      width: 100%;
+      overflow: hidden;
+      margin: 0 auto;
+      // 슬라이더
+      & .slider {
+        position: relative;
+        height: 600px;
+        margin: 0 auto;
+        // 컨텐츠
+        & .slide {
+          overflow: hidden;
+          float: left;
+          height: 600px;
+          transition: all 0.8s;
+          & a {
+            display: block;
+            width: 100%;                  
+            height: 100%;
+          }
+          // 텍스트
+          & .text-wrap {
+            width: 1000px;
+            height: 100%;
+            margin: 0 auto;
+            position: relative;
+            & .text {
+              position: absolute;
+              left: 0;
+              top: 50%;
+              font-size: 20px;
+              text-align: left;
+              color: #fff;
+              opacity: 0;
+              transform: translateY(-80%);
+              transition: all 0.8s;
+              text-shadow: 3px 3px 5px #555;
+              & .title {
+                font-size: 60px;
+              }
+            }
+          }
+          // text 애니매이션
+          &.slick-active {
+            & .text-wrap {
+              & .text {
+                opacity: 1;
+                transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
+                -moz-transform:translateY(-50%);
+                -webkit-transform:translateY(-50%);
+              }
+            }
+          }
+        }
+        // 슬라이더 버튼
+        & .slick-dots {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          z-index: 1000;
+          width: 180px;
+          transform: translate(320px,-50%);
+          -ms-transform:  translate(320px,-50%);
+          -moz-transform: translate(320px,-50%);
+          -webkit-transform: translate(320px,-50%);
+          & li {
+            & button {
+              width: 100%;
+              height: 60px;
+              padding: 0 20px;
+              border: 2px solid #fff;
+              font-size: 12px;
+              text-align: left;
+              color: #444444;
+              background-color: #fff;
+              // outline: none;
+            }
+            // 버튼 active
+            &.slick-active {
+              & button {
+                border: 2px solid rgb(95, 132, 255);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  & .red-box {
+    max-width: 1000px;
+    height: 300px;
+    margin: 0 auto;
+    background-color: rgb(255, 162, 162);
+  }
+  & .box-wrap {
+    max-width: 1000px;
+    margin: 0 auto;
+    font-size: 0;
+    & .blue-box {
+      height: 200px;
+      background-color: rgb(155, 155, 255);
+      @media (min-width: 640px) {
+        display: inline-block;
+        width: 50%;
+      }
+    }
+    & .green-box {
+      height: 200px;
+      background-color: rgb(172, 255, 172);
+      @media (min-width: 640px) {
+        display: inline-block;
+        width: 50%;
+      }
+    }
+  }
+  // bar banner
+  & .yellow-banner-wrap {
+    height: 50px;
+    & .yellow-banner {
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      color: #fff;
+      background-color: rgb(255, 145, 0);
+      // 스크롤 시 위로 붙음
+      &.is-fixed {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 10;
+        background-color: rgb(167, 94, 0);
+      }
+    }
+  }
+  & .common-inner {
+    max-width: 1000px;
+    padding: 20px 0 50px;
+    margin: 0 auto;
+    
+    @media (min-width: 640px) {
+      
+      padding: 30px 0 150px;
+    }
+    & .text {
+      font-size: 15px;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.5s;
+      @media (min-width: 640px) {
+        padding-right: 300px;
+        font-size: 20px;
+      }
+      // 스크롤시 나타남
+      &.is-active {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    & .img {
+      width: 80%;
+      transform: translateX(100px);
+      opacity: 0;
+      transition: all 0.5s;
+      @media (min-width: 640px) {
+        max-width: 700px;
+      }
+      // 스크롤시 나타남
+      &.is-active {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  }
+  & .content-wrap {
+    & .img-text {
+      height: 30px;
+      padding-top: 40px;
+      margin-bottom: 40px;
+      font-size: 15px;
+      text-align: left;
+      overflow: hidden;
+      transition: all 0.5s;
+      box-sizing: border-box;
+      @media (min-width: 640px) {
+        
+        font-size: 25px;
+      }
+      & + .content-img {
+        overflow: hidden;
+        & .text-img {
+          width: 100%;
+          transform: translateX(-1500px);
+          transition: all 0.5s 0.3s;
+        }
+      }
+    }
+    // 스크롤 시 나타남
+    &.is-active {
+      & .img-text {
+        padding-top: 0;
+        & + .content-img {
+          & .text-img {
+            transform: translateX(0);
+          }
+        }
+      }
+    }
+  }
+  & .img-wrap {
+    text-align: right;
+  }
+}

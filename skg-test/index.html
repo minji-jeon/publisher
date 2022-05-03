@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="../old/js/jquery-1.12.2.min.js"></script>
+</head>
+<body>
+  <div class="wrap">
+    <div class="butterfly">
+      <div class="butterfly-body">
+        <span class="butterfly-right">
+          <svg width="71" height="81" viewBox="0 0 71 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4.85268 27.8978C10.8972 28.3027 18.1439 24.6981 25.4841 20.8609C32.4346 17.2869 38.164 15.9292 43.2709 24.9749C44.3854 26.9664 45.1889 29.0418 47.1296 32.5098C52.5575 42.1027 60.4474 50.069 69.9717 55.5732C71.1007 36.4821 67.1694 17.3992 58.5778 0.266661C54.2011 1.00258 20.6744 6.50859 17.9831 6.9776C17.033 9.57696 15.8186 12.0697 14.3591 14.4165C11.6779 19.2392 8.49113 23.7584 4.85268 27.8978V27.8978Z" fill="#EA002C"/>
+          <path d="M1.92548 31.3846C1.46577 32.0026 1.03578 32.5138 0.761333 32.983C0.578734 33.2596 0.476113 33.582 0.464791 33.9145C0.453469 34.2471 0.533887 34.5769 0.697172 34.8676C0.971543 35.3108 1.33669 35.6906 1.76816 35.9816L58.9412 77.5276C60.0289 78.2716 61.9761 79.752 62.7161 80.1946C63.0134 80.4061 63.3622 80.5325 63.7246 80.5601C64.0871 80.5877 64.4495 80.5155 64.7729 80.3512C65.1054 80.1562 65.3812 79.8776 65.5734 79.5425C67.9531 73.2306 69.3655 66.5874 69.7626 59.8385C59.223 53.8786 50.47 45.1742 44.4334 34.65C42.5118 31.2163 42.2551 30.2778 40.9293 27.9086C37.0862 21.0414 33.1028 20.8808 26.9362 24.0162C25.7774 24.6646 24.2438 25.5229 22.5739 26.4574C16.9972 29.1274 9.20265 32.6327 1.92548 31.3846Z" fill="#FF7A00"/>
+          </svg>
+          
+          
+        </span>
+        <span class="butterfly-left">
+          <svg width="71" height="81" viewBox="0 0 71 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M69.539 47.2853C65.7409 42.7375 56.966 37.7735 48.8742 42.347C41.5129 46.4665 40.4496 55.0425 30.805 60.4398C27.8461 62.1437 24.4888 63.036 21.0683 63.0277C17.6477 63.0193 14.2834 62.1107 11.3109 60.3924C12.2909 62.1436 13.6055 63.9329 14.831 66.0427C16.2334 68.4694 17.4535 70.997 18.4808 73.6043L59.015 80.8599C64.3324 70.3334 67.8876 58.9911 69.539 47.2853V47.2853Z" fill="#EA002C"/>
+          <path d="M1.12925 47.557C0.47592 46.3896 0.899011 45.3863 2.15126 44.5051C3.40352 43.624 51.9278 8.93853 59.305 3.7279C60.4637 3.07945 62.4824 1.40867 63.0617 1.08444C63.2841 0.927851 63.5375 0.820854 63.805 0.770591C64.0725 0.720328 64.3479 0.727951 64.613 0.792952C64.878 0.857953 65.1266 0.978841 65.3421 1.14755C65.5576 1.31627 65.7351 1.52893 65.8628 1.77137C70.3925 14.9578 71.8319 28.9974 70.0687 42.7941C67.2295 39.7688 63.4911 37.7491 59.4203 37.041C55.3495 36.333 51.1682 36.9752 47.5102 38.8704C38.9903 43.6384 37.746 52.4509 29.2112 57.2723C15.3599 65.0689 2.99315 50.8876 1.12925 47.557Z" fill="#FF7A00"/>
+          </svg>
+          
+          
+        </span>
+      </div>
+    </div>
+
+    <div class="main">
+      <p>sk가 어둠을 가져왔다!</p>
+    </div>
+    <div class="letter">
+      <div class="input-section">
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <button>편지 보내기</button>
+      </div>
+
+    </div>
+  </div>
+  <!--[if IE 9]>
+  <script type="text/javascript" src="./js/matchMedia.js"></script>
+  <script type="text/javascript" src="./js/matchMedia.addListener.js"></script>
+  <![endif]-->
+  <script src="./js/gsap.min.js"></script>
+  <script src="./js/ScrollTrigger.min.js"></script>
+  <script src="./js/ScrollToPlugin.min.js"></script>
+  <script>
+    $(function() {
+
+
+
+      // lnb ani
+      var lnbTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".introduce-lnb",
+          start: "top 70%",
+          end: "top 70%",
+          //markers: true,
+        }
+      });
+
+      lnbTl.fromTo(".introduce-lnb .lnb-item .lnb-link-txt", .5, {
+        y: 50, 
+        opacity: 0,
+      },{
+        y: 0, 
+        opacity: 1,
+        stagger: .2
+      })
+      .fromTo(".introduce-lnb .lnb-item .lnb-link-list", .5, {
+        y: 50, 
+        opacity: 0, 
+      },{
+        y: 0, 
+        opacity: 1, 
+        stagger: .2
+      }, .0);
+
+
+      
+      setTimeout(function() {
+        $('.main p').addClass("open");
+      },6000);
+    });
+  </script>
+</body>
+</html>

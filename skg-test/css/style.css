@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.wrap {
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(45deg, #23232a 20%, #fff 80%);
+  background-size: 400% 400%;
+  -webkit-animation: bgAni 6s ease-in forwards;
+          animation: bgAni 6s ease-in forwards;
+}
+.wrap .butterfly {
+  padding: 80vh 0 0 0;
+  transform-origin: top left 30vw;
+  transform: rotate(0deg);
+  -webkit-animation: goButterfly 6s ease-in forwards;
+          animation: goButterfly 6s ease-in forwards;
+}
+.wrap .butterfly .butterfly-body {
+  width: 250px;
+  height: 250px;
+  -webkit-animation: goBody 6s ease-in forwards;
+          animation: goBody 6s ease-in forwards;
+}
+.wrap .butterfly .butterfly-body .butterfly-right {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -8%);
+  transform-origin: top center;
+  -webkit-animation: wingRight 0.7s cubic-bezier(0.36, 0.1, 0.16, 1) infinite alternate;
+          animation: wingRight 0.7s cubic-bezier(0.36, 0.1, 0.16, 1) infinite alternate;
+}
+.wrap .butterfly .butterfly-body .butterfly-left {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: bottom center;
+  transform: translate(-50%, -103%);
+  -webkit-animation: wingLeft 0.7s cubic-bezier(0.36, 0.1, 0.16, 1) infinite alternate;
+          animation: wingLeft 0.7s cubic-bezier(0.36, 0.1, 0.16, 1) infinite alternate;
+}
+.wrap .main p {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50, -50%);
+  opacity: 0;
+  color: #fff;
+  transition: all 0.5s;
+}
+.wrap .main p.open {
+  opacity: 1;
+}
+.wrap .letter {
+  background-color: #fff;
+}
+
+@-webkit-keyframes wingRight {
+  0% {
+    transform: translate(-50%, -8%) rotateX(40deg);
+  }
+  100% {
+    transform: translate(-50%, -8%) rotateX(-40deg);
+  }
+}
+
+@keyframes wingRight {
+  0% {
+    transform: translate(-50%, -8%) rotateX(40deg);
+  }
+  100% {
+    transform: translate(-50%, -8%) rotateX(-40deg);
+  }
+}
+@-webkit-keyframes wingLeft {
+  0% {
+    transform: translate(-50%, -103%) rotateX(40deg);
+  }
+  100% {
+    transform: translate(-50%, -103%) rotateX(-40deg);
+  }
+}
+@keyframes wingLeft {
+  0% {
+    transform: translate(-50%, -103%) rotateX(40deg);
+  }
+  100% {
+    transform: translate(-50%, -103%) rotateX(-40deg);
+  }
+}
+@-webkit-keyframes goBody {
+  0% {
+    transform: scale(0.7);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+@keyframes goBody {
+  0% {
+    transform: scale(0.7);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+@-webkit-keyframes goButterfly {
+  0% {
+    display: block;
+    transform: translate(0, 0) rotate(12deg);
+  }
+  99% {
+    display: block;
+    transform: translate(50%, 0) rotate(-90deg);
+  }
+  100% {
+    display: none;
+    transform: translate(50%, 0) rotate(-90deg);
+  }
+}
+@keyframes goButterfly {
+  0% {
+    display: block;
+    transform: translate(0, 0) rotate(12deg);
+  }
+  99% {
+    display: block;
+    transform: translate(50%, 0) rotate(-90deg);
+  }
+  100% {
+    display: none;
+    transform: translate(50%, 0) rotate(-90deg);
+  }
+}
+@-webkit-keyframes bgAni {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes bgAni {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}/*# sourceMappingURL=style.css.map */
