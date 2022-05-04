@@ -3,6 +3,7 @@ import "./css/common.css";
 import "./css/reset.css";
 import "./css/sub02.css";
 import axios from "axios";
+import {Link} from 'react-router-dom'
 
 function MainPage() {
   const [products, setProducts]= React.useState([]); /* 상품이기때문에 빈배열을 기본값으로 넣음 */
@@ -50,20 +51,18 @@ function MainPage() {
               {
                 products.map(function(product, index) {
                   return (
-                  <a className="product-card" href="#">
-                    <img className="product-img" src={product.imgUrl} alt="" />
-                    <p className="title">{product.name}</p>
-                    <p className="sub_text">{product.description}</p>
-                    <p className="sub_price">{product.price}</p>
-                    <p><span>{product.tag}</span></p>
-                  </a>
+                  <div className="product-card">
+                    <Link className="product-link" to={`/products/${index}`} >
+                      <img className="product-img" src={product.imgUrl} alt="" />
+                      <p className="title">{product.name}</p>
+                      <p className="sub_text">{product.description}</p>
+                      <p className="sub_price">{product.price}</p>
+                      <p><span>{product.tag}</span></p>
+                    </Link>
+                  </div>
                   )
                 })
               }
-
-              
-
-
             </div>
           </div>
         </section>
