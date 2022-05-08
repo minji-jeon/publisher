@@ -17,24 +17,13 @@ function MainPage() {
     }).catch(function(error){
       console.error("에러 : ",error);
     });
-  },[])
+  },[]);
     
     
 
 
   return (
     <div>
-      <header>
-        <div className="top_header">
-          <div className="inner">
-            <h1 className="logo">
-              <a href="index.html">
-                <img src="" alt="로고"/>
-              </a>
-            </h1>
-          </div>
-        </div>
-      </header>
       <main id="main">
         <section id="visual">
           <div className="inner">
@@ -52,7 +41,7 @@ function MainPage() {
                 products.map(function(product, index) {
                   return (
                   <div className="product-card">
-                    <Link className="product-link" to={`/products/${index}`} >
+                    <Link className="product-link" to={`/products/${product.id}`} >
                       <img className="product-img" src={product.imgUrl} alt="" />
                       <p className="title">{product.name}</p>
                       <p className="sub_text">{product.description}</p>
