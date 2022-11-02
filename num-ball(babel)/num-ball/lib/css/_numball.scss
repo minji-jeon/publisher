@@ -1,3 +1,23 @@
+.circle {
+  pointer-events:none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+  z-index: 5000;
+  transition: width 0.3s,height 0.3s;
+  &.active {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+
 .num-ball-warp {
   position: relative;
   width: 100%;
