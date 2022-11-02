@@ -2,6 +2,42 @@
 
 const clidk = "";
 
+const circle = document.querySelector(".circle");
+
+document.addEventListener("mousemove", (e) => {
+  const mouseX = e.clientX;
+  const mouseY = e.clientY;
+  circle.style.left = mouseX + 'px';
+  circle.style.top = mouseY + 'px';
+});
+
+$(".selec-num").on("mouseenter", function() {
+  console.log("ddddd");
+  // circle.css({"width":'50px', "height": "50px"});
+  $(".circle").addClass("active");
+})
+$(".selec-num").on("mouseleave", function() {
+  console.log("ddddd");
+  // circle.css({"width":'50px', "height": "50px"});
+  $(".circle").removeClass("active");
+})
+
+//모바일 구분
+function _isMobile() {
+  var UserAgent = navigator.userAgent;
+  console.log(UserAgent)
+  if (UserAgent.match(/iPhone|iPod|iPad|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) != null || UserAgent.match(/LG|SAMSUNG|Samsung/) != null) {
+    return true;
+  } else {
+    return false;
+  }
+}
+//단말 구분
+if(_isMobile()) {
+  //모바일 단말
+    $(".circle").remove();
+  //console.log("모바일");
+}
 var arrNum = new Array();
 
 $('.how-dim').on('click', function () {
