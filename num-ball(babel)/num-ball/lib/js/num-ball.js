@@ -1,5 +1,7 @@
 'use strict';
 
+const clidk = "";
+
 var arrNum = new Array();
 
 $('.how-dim').on('click', function () {
