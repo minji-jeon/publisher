@@ -90,6 +90,7 @@ $('.num-ball .push-num .push-num-btn').on('click', function () {
     alert('이미 지정 되었습니다.');
   }
   $(this).addClass('is-set');
+  atob(arrNum);
 });
 
 // 리셋
