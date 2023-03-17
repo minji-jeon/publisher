@@ -8,9 +8,74 @@
   <link rel="stylesheet" href="./css/base.css">
   <script src="./js/jquery-1.12.2.min.js"></script>
   <script src="./js/bootstrap.min.js"></script>
+  <script src="./js/slick.min.js"></script>
 </head>
+<style> 
+.comtemt {
+  width: 100%;
+  height: 800px;
+  margin: 0 auto;
+  /* overflow-x: hidden; */
+}
+.slick-list {
+  height: 500px;
+  overflow: hidden;
+}
+.center {
+  width: 100%;
+  margin: 0 auto;
+}
+.slider {
+  width: 100%;
+  height: 500px;
+  padding: 0 10px;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+.slider-content {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+  img {
+    width: calc(100% + 300px);
+    transform: translateX(-150px);
+    position: relative;
+  /* transition: left 0.8s; */
+}
+</style>
 <body class="gnb-test">
   <div class="wrap">
+    <div class="comtemt">
+      <div class="center">
+        <div class="slider" style=""><div class="slider-content">
+          <img class="lightbox-image" src="/gnb/maxresdefault.jpg">
+        </div></div>
+        <div class="slider" style=""><div class="slider-content">
+
+          <img class="lightbox-image" src="/gnb/maxresdefault.jpg">
+        </div></div>
+        <div class="slider" style=""><div class="slider-content">
+
+          <img class="lightbox-image" src="/gnb/maxresdefault.jpg">
+        </div></div>
+        <div class="slider" style=""><div class="slider-content">
+          <img class="lightbox-image" src="/gnb/maxresdefault.jpg">
+
+        </div></div>
+        <div class="slider" style=""><div class="slider-content">
+          <img class="lightbox-image" src="/gnb/maxresdefault.jpg">
+
+        </div></div>
+        <div class="slider" style=""><div class="slider-content">
+          <img class="lightbox-image" src="/gnb/maxresdefault.jpg">
+
+        </div></div>
+      </div><div class="slider-content">
+
+      </div>
+    </div>
     <header class="header">
       <div class="header-wrap">
         <div class="header-inner">
@@ -187,7 +252,8 @@
     </header>
     <main class="main">
       <section class="box-list">
-        <div class="box"></div>
+        <div class="box" style="background: none;">
+        </div>
       </section>
       <!-- 텝메뉴 -->
       <section class="tab-sc">
@@ -232,6 +298,95 @@
     </main>
   </div>
   <script>
+
+$('.center').slick({
+  // centerMode: true,
+  // centerPadding: '10px',
+  // slidesToShow: 3,
+  // swipe:drag,
+  // draggable:false,
+  infinite:false,
+      // centerMode: true,
+      // centerPadding: '60px',
+});
+
+$(".slick-prev").on("click", function() {
+  var ch = $(this).hasClass("slick-disabled")
+  if (ch) {
+    $('.center').slick('slickGoTo', 5);
+  }
+    console.log("dddd");
+    $(".slider .lightbox-image").animate({
+      left: "0",
+    }, 300);
+    $(".slick-active.slider .lightbox-image").animate({
+      left: "150px",
+    }, 400);
+});
+$(".slick-next").on("click", function() {
+  var ch = $(this).hasClass("slick-disabled")
+  if (ch) {
+    $('.center').slick('slickGoTo', 0);
+  }
+    $(".slider .lightbox-image").animate({
+      left: "0",
+    }, 300);
+    $(".slick-active.slider .lightbox-image").animate({
+      left: "-150px",
+    }, 400);
+})
+/* $('.center').slickNext(function() {
+  console.log("ddddd");
+}) */
+
+$('.center').on('edge', function(event, slick, direction){
+  console.log(slick);
+  console.log(direction);
+});
+
+// On before slide change
+$('.center').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+  console.log(nextSlide);
+  console.log(nextSlide);
+});
+
+
+
+$('.center').on('swipe', function(event, slick, direction){
+  console.log(direction);
+  var prevch = $(".slick-prev").hasClass("slick-disabled");
+  var nextchh = $(".slick-next").hasClass("slick-disabled");
+
+  if(direction == "right") {
+    console.log("dddd");
+    $(".slider .lightbox-image").animate({
+      left: "0",
+    }, 300);
+    $(".slick-active.slider .lightbox-image").animate({
+      left: "150px",
+    }, 300);
+    // $(".slider .lightbox-image").css({"left": "-100px"})
+  }
+  
+  if(direction == "left") {
+    // $(".slider .lightbox-image").css({"left": "100px"})
+    $(".slider .lightbox-image").animate({
+      left: "0",
+    }, 300);
+    $(".slick-active.slider .lightbox-image").animate({
+      left: "-150px",
+    }, 300);
+  }
+  if(direction == "right" && prevch) {
+    $('.center').slick('slickGoTo', 5);
+  }
+  if(direction == "left" && nextchh) {
+    $('.center').slick('slickGoTo', 0);
+  }
+
+
+});
+
 
   desktopNav()
 
